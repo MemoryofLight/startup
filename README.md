@@ -47,3 +47,14 @@ so the root domain is like byu.edu, google.com, alabama.gov, etc. ICANN controls
 - enter domain name into browser, browser checks to see if it has the name already in its cache of names, if not it contacts a DNA server and gets IP address. If the DNS server doesn't have the domain name it requests the name from an `authoritative name server` DNS. If that doesn't know you get a unknown domain name error. If the name is found, your browser makes an Http connection to the associated IP address. 
 - TTL (time to live)- different caching layers will honor the TTL and clear cache after requested period has passed.
 - you can pay to lease an unused domain name.
+
+## Caddy
+web service gateway that listens for incoming Http requests. Caddy then serves up the files or routes the request to another web service. The ability to route requests is called a `gateway` or `reverse proxy` and allows you to exponse multiple web services as a single external web service. 
+- handles creation and rotation of web certificates which allows us to easily support https
+- serves up all our static html, css, and javascript files,
+
+### Important Caddy files
+* config file ~/Caddyfile
+- contains definition for routing http requests that caddy receives. Never modify this file manually except when you configure domain name of your server.
+* HTML files ~/public_html
+- directory of files caddy serves up when requests are made the root of your web server.
