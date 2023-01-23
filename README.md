@@ -6,6 +6,34 @@ Oh to be a college student who practices redundancy.
 I learned how to merge files and resolve the conflicts between them. I got familiar with the push and pull commands and some of the syntax of markdown. I learned how to use the functionality in VScode for committing - which I did not know before. I know how to push and pull from the terminal and from the IDE now and I also know how to commit from terminal, IDE and Github which is good because I was confused before. And now this is all on line 6 so we will see how that goes. I also learned how to save all using CTRL K and then S. I learned how to identify myself and set my identity for git too. I forked someone's code and, Finally, I was able to clone a repository that I made so that was pretty cool.
 Always Add, Commit, Push until your fingers fall off.
 
+## Console Commands
+`cd` -change directory
+`mdkir` make directory
+`touch` create files and modify metadata
+`cp` copy files
+`mv` move and rename files
+`rm` delete files or directories
+`curl` download files found at specific URLs
+`grep` search for fragments of text inside larger bodies of text
+`less` `cat` view file's contents
+`awk` `tr` `sed` manipulate and transform streams of text
+`cd path/to/directory`
+ommitting the slash means the path is relative to your current directory
+`cd ..` move back up one directory
+`ls` list the stuff in the directory
+`ls -l` list in more detail
+`ls -al` list all files in more detail even the hidden ones
+`--help` get info on command
+`man` get info on command
+`mkdir newDirectory`
+`rmdir directory`
+`rmdir -rf` remove directory and everything in it
+`touch fileName`
+`mv current/file/path new/file/path`
+`cp current/path new/path`
+`*` is a wildcard character
+tldr.sh explains a lot of commands
+`wc` counts # of words, lines, chars, or bytes of whatever is inputted
 ## GitHub
 directory -> staged -> .git
 git add puts on stage, git commit puts in into the repository, git checkout moves to a previous commit. Think about Github as like another person on a computer. It's just a server somewhere that holds git and takes your commits and passes them back out. git push - pushes a commit to a clone of your repository (usually to GitHub). git pull - pulls the newest commits down.
@@ -62,3 +90,5 @@ web service gateway that listens for incoming Http requests. Caddy then serves u
 - contains definition for routing http requests that caddy receives. Never modify this file manually except when you configure domain name of your server.
 * HTML files ~/public_html
 - directory of files caddy serves up when requests are made the root of your web server.
+
+## HTML (Hypertext Markup Language)
