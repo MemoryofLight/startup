@@ -161,3 +161,24 @@ attributes describe specific details of the element. ex. the `id` attribute give
 `video` video content
 `svg` scalable vector graphic content
 `iframe` inline fram of another HTML page
+#### Comments
+`<!-- commented text -->` this will be ignored when the browser renders the doc
+#### Special Characters
+- if you want to use special characters you need to escape them using entity syntax.
+& - `&amp;`
+< - `&lt;`
+> - `&gt;`
+" - "
+' - '
+😀 - `&#128512;`
+etc.
+#### HTML Versions
+Year	Version	Features
+1990	HTML1	format tags
+1995	HTML2	tables, internationalization
+1997	HTML3	MathML, CSS, frame tags
+1999	HTML4	external CSS
+2014	HTML5	email, password, media, and semantic tags
+
+#### Rendering HTML
+- You can save any HTML file to your disk and then open the file in your browser or you can open it in VScode and use the Live Server extension to display html. 
