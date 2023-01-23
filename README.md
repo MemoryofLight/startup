@@ -92,3 +92,72 @@ web service gateway that listens for incoming Http requests. Caddy then serves u
 - directory of files caddy serves up when requests are made the root of your web server.
 
 ## HTML (Hypertext Markup Language)
+foundational content structure all web apps build on. Originally a format for web docs or pages. Now a page represents a single page application (SPA) or a large group of hyperlinked pages that form a multipage application (MPA).
+- text is valid HTML
+- always include `<!DOCTYPE html>` at the top of the HTML file. This tells the browser the type and version of the document
+#### Elements and tags
+Elements are represented with enclosing tags. 
+- tag- a delimited textual name we use to designate the start and end of an HTML element as it appears in an HTML document.
+- tags are delimited with < and >
+- the closing tag will have / before its name.
+`<p>Helloworld</p>` This denotes that this is a paragraph.
+- You could write a thing like this- 
+`<html>`
+  `<head>`
+    `<title>My First Page</title>`
+  `</head>`
+ ` <body>`
+    `<main>`
+      `<p>Hello world</p>`
+    `</main>`
+  `</body>`
+`</html>`
+and it would appear the same as ours above because HTML is about structure.
+the above means:
+* html- about top level page structure
+* head - about page and page title
+* body - content
+* main- main content excluding headers, footers, navigation helps, etc.
+#### Attributes
+attributes describe specific details of the element. ex. the `id` attribute gives a unique ID to the element so you can distinguish it from other elements.
+- `class` attribute- designates element as beeing classified into a named group of elements. 
+-written in the element tag with aname followed by an optional value. 
+`<p id="hello" class-"greeting">Hello world</p>`
+#### Hyperlinks
+-represented with an anchor `a` element that has an attribute containing the address of the hyperlink reference.
+- ex. `<a href="https://byu.edu">Go to the Y</a>`
+
+#### Common elements
+`html` page container
+`head` header information
+`title` title of page
+`meta` metadata for the page such as character set or viewport settings
+`script` JavaScript reference. 
+`include` external content reference
+`body` entire content body of page
+`header` header of main content
+`footer` footer of main content
+`nav` navigational inputs
+`main` main content of page
+`section` a section of the main content
+`aside` aside content from the main content
+`div` a block division of content
+`span` an inline span of content
+`h<1-9>` text heading. From h1, the highest level, down to h9, the lowest level
+`p` a paragraph of text
+`b` bring attention
+`table` table
+`tr` table row
+`th` table header
+`td` table data
+`ol, ul` ordered or unordered list
+`li` list item
+`a` anchor the text to a hyperlink
+`img` graphical image reference
+`dialog` interactive componenet such as a confirmation
+`form` a collection of user input
+`input` user input field
+`audio` audio content
+`video` video content
+`svg` scalable vector graphic content
+`iframe` inline fram of another HTML page
