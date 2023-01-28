@@ -10,7 +10,7 @@ Always Add, Commit, Push until your fingers fall off.
 Have you ever wanted to create a crazy plant and show all your friends? No? Well now you do and now you can! Create over 100 different possible plants and make your custom garden to share with your friends! Get notified when another user makes a new plant so you can always be up to date on their gardens. Build your aesthetic and collection with Plantarium!
 Features:
 You choose the background to your garden. You choose from preset models which plant combinations you want to have in your garden. Customize your pot, your flowers, or your leaves to get the perfect plant for you. The app features a notification system which lets others know when you make a new plant and tells you when other users make new plants. You can also save your garden and come back anytime to find it waiting for you. Create a username and password and sign on!
-![](IMG_1378.jpg)
+![](IMG_1378.jpg)=100x200
 ![](IMG_1379.jpg)
 ![](IMG_1380.jpg)
 ## Class Stuff
