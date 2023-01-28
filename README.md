@@ -14,6 +14,9 @@ You choose the background to your garden. You choose from preset models which pl
 ![](IMG_1379.jpg)
 ![](IMG_1380.jpg)
 ## Class Stuff
+- `ssh -i filename ubuntu@IPaddress`
+ server link: https://us-east-2.console.aws.amazon.com/ec2/home?region=us-east-2#ElasticIpDetails:AllocationId=eipalloc-063765021d2a9237d 
+ IP address: 3.140.79.77
 ### Jan 27
 `curl` is basically a command line browser. `curl -v` lets you see all the communication between your device and whatever url you put in after curl -v. Do `curl -v http://URL
 - https is secure, http is not secure.
