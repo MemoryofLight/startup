@@ -109,6 +109,9 @@ web service gateway that listens for incoming Http requests. Caddy then serves u
 - contains definition for routing http requests that caddy receives. Never modify this file manually except when you configure domain name of your server.
 * HTML files ~/public_html
 - directory of files caddy serves up when requests are made the root of your web server.
+## Web Services
+* NS record - name server record and basically provides legitimacy between the DNS records and registration so that it knows you have lisence to use your domain name. It contains the names of the authoritative name servers that authorize you to place DNS records in this DNS server. Those same authoritative name servers are listed with the registrar that you leased your domain name from. That way the server can verify that the DNS records and registration match and are authorized to represent the domain name when defining DNS records
+* SOA record - start of authority, provides contact info about the owner of the domain
 
 ## HTML (Hypertext Markup Language)
 foundational content structure all web apps build on. Originally a format for web docs or pages. Now a page represents a single page application (SPA) or a large group of hyperlinked pages that form a multipage application (MPA).
