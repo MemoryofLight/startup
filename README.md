@@ -112,6 +112,18 @@ web service gateway that listens for incoming Http requests. Caddy then serves u
 ## Web Services
 * NS record - name server record and basically provides legitimacy between the DNS records and registration so that it knows you have lisence to use your domain name. It contains the names of the authoritative name servers that authorize you to place DNS records in this DNS server. Those same authoritative name servers are listed with the registrar that you leased your domain name from. That way the server can verify that the DNS records and registration match and are authorized to represent the domain name when defining DNS records
 * SOA record - start of authority, provides contact info about the owner of the domain
+## Security
+- https - secure hypertext transport protocol (http with a secure connection before any data exchange happens). Secure connection means that data is encrypted using TLS protocol.
+- TLS works by negotiating a shared secret that is then used to encrypt data. (use curl -v to see this)
+- modern browsers expect servers to only use https and the next version of http will only support secure connections so any web application should be built with a secure connection.
+### Web Certificates
+- genertated by trusted 3rd party using encryption. Th issuer is responsible for verifying thst the certificated owner actually owns the domain name. So once I have a certificate, I can serve it from the server, the browser can see it and validate it using the public keys of whoever issued me the certificate.
+- Ever since `Let's Encrypt` was made, certificates have become free and the web has become a safer place.
+1. HTTPs request made
+2. Caddy asks let's encrypt to verify that domain for requested certificate is owned by requester. 
+3. L.E. tells requester to return a digitally signed response for a temporary URL when the request is made
+4. L.E. makes http request and if successful they give the certificate to the owner.
+
 
 ## HTML (Hypertext Markup Language)
 foundational content structure all web apps build on. Originally a format for web docs or pages. Now a page represents a single page application (SPA) or a large group of hyperlinked pages that form a multipage application (MPA).
