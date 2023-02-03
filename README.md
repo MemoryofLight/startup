@@ -157,6 +157,11 @@ attributes describe specific details of the element. ex. the `id` attribute give
 - `class` attribute- designates element as beeing classified into a named group of elements. 
 -written in the element tag with aname followed by an optional value. 
 `<p id="hello" class-"greeting">Hello world</p>`
+##### Common attributes
+`name` name of imput. submitted as the name of the input if used in a form
+`disabled` disables the ability for the user to interact with the input
+`value` the initial value of the input
+`required` signifies that a value is required in order to be valid
 #### Hyperlinks
 -represented with an anchor `a` element that has an attribute containing the address of the hyperlink reference.
 - ex. `<a href="https://byu.edu">Go to the Y</a>`
@@ -217,3 +222,33 @@ Year	Version	Features
 #### Rendering HTML
 - You can save any HTML file to your disk and then open the file in your browser or you can open it in VScode and use the Live Server extension to display html. 
 #### HTML Structure
+#### HTML Input Elements
+`form` input container and submission
+`fieldset` labeled input grouping
+`input` multiple types of user input
+`select` selection dropdown
+`optgroup` grouped selection dropdown
+`option` selection option
+`textarea` multiline text input
+`label` individual input label
+`output` output of input
+`meter` display value with a known range
+* form used to be necessary but since Javascript, it has lost much of its usefulness.
+##### To set the type of Input:
+- use the type attribute
+text - single line textual value
+password - obscured password
+email - email address
+tel - telephone number
+url - url address
+number - numerical value
+checkbox - inclusive selection
+radio - exclusive selection
+range - range limited number
+date - year, month, day
+datetime-local - date and time
+month - year, month
+week - week of year
+color - color
+file - local file
+submit - button to trigger form submission
