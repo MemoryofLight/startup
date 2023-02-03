@@ -156,12 +156,14 @@ the above means:
 attributes describe specific details of the element. ex. the `id` attribute gives a unique ID to the element so you can distinguish it from other elements.
 - `class` attribute- designates element as beeing classified into a named group of elements. 
 -written in the element tag with aname followed by an optional value. 
-`<p id="hello" class-"greeting">Hello world</p>`
+`<p id="hello" class="greeting">Hello world</p>`
 ##### Common attributes
-`name` name of imput. submitted as the name of the input if used in a form
+`name` name of imput. submitted as the name of the input if used in a form, can be used to reference the element in javascript
 `disabled` disables the ability for the user to interact with the input
 `value` the initial value of the input
 `required` signifies that a value is required in order to be valid
+`for` associates label with a control element
+
 #### Hyperlinks
 -represented with an anchor `a` element that has an attribute containing the address of the hyperlink reference.
 - ex. `<a href="https://byu.edu">Go to the Y</a>`
@@ -227,6 +229,11 @@ Year	Version	Features
 `fieldset` labeled input grouping
 `input` multiple types of user input
 `select` selection dropdown
+ex.
+  `<select id="select" name="varSelect">`
+    `<option selected>option1</option>`
+    `<option>option2</option>`
+    `<option>option3</option>`
 `optgroup` grouped selection dropdown
 `option` selection option
 `textarea` multiline text input
@@ -252,3 +259,12 @@ week - week of year
 color - color
 file - local file
 submit - button to trigger form submission
+#### HTML Media elements
+`img, audio, and video` are just references to external files.
+`svg and canvas` internal media elements that contain code for rendering a visual image that can even be animated
+* media tags that reference external media all take URL as an attribute. you can put the url as a relative path or a full path. Make the path as relative as possible so that if you change your code it doesn't affect the url.
+`img` - specify the `src` attribute with the url to the source image. specify an `alt` attribite to describe the image for accessibility.
+`audio` - uses src, include `controls` if you want the user to be able to control the audio playback (it makes a visual representation of the audio) `autoplay` starts the audio as soon as the audio file is loaded `loop` keeps playing it over and over
+`video` - uses src, controls, and autoplay, you may need to include `crossorigin="anonymous"` if you are requesting files from a different domain than the one serving your content
+`svg` - scalable vector graphics, allows you to render graphics inline in your HTML. Lots of attributes yeah
+`canvas` - facilitates 2D drawing and animation, requires javascript to work
