@@ -279,3 +279,7 @@ Q = quadratic Bézier curve
 T = smooth quadratic Bézier curveto
 A = elliptical Arc
 Z = closepath
+
+### Command for running simon
+./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
+This deletes previous deployment of simon, copies all of the files in the directory, and tells caddy to host the files under the simon subdomain.
