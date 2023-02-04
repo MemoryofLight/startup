@@ -25,6 +25,10 @@ Application (http), Transport (TCP- slower but more methodical, UDP-faster but m
 - Web server has services within it.
 - Multiple ports on a server. Port 443 is a secure http connection. You can have a gateway service on your web server that links to different ports ig.
 - servers can talk to other servers. service are just programs in the servers
+## SIMON Feb 4 What I learned
+./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
+This deletes previous deployment of simon, copies all of the files in the directory, and tells caddy to host the files under the simon subdomain.
+I learned a ton about the different html elements and their attributes and what they actually do. For example, the for attribute associates with an id and links the label to the input box so that when you click the name you are directed to the input. In addition I took it upon myself to study the paths and how that works. I learned that M is moveto and basically just specifies a point and another and another until you have a shape that can be filled. Unlike M, L actually draws lines as it moves. Q makes a quadratic curve starting that the last point previous to Q and going to the second input of Q. The first Q input is the focal point. I also learned how coordinates are counted in the viewBox. They start at the top left which is 0,0. Down is positive y, right is positive x. I was also able to just really get in my head how certain elements can be used and the organization of a page is displayed. It was confusing for a while because it seemed like many elements didn't produce noticeable effects, but now I'm seeing the potential for a lot of these division to be used for styling and interactivity purposes which really cleared a lot of confusion. I also learned that readonly is applied to input when you want it to just be display and not have the user input anything. Overall it was mostly learning about individual attributes and elements of which I made note of in repsective sections of this document. 
 ## Console Commands
 `cd` -change directory
 `mdkir` make directory
