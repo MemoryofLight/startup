@@ -268,3 +268,14 @@ submit - button to trigger form submission
 `video` - uses src, controls, and autoplay, you may need to include `crossorigin="anonymous"` if you are requesting files from a different domain than the one serving your content
 `svg` - scalable vector graphics, allows you to render graphics inline in your HTML. Lots of attributes yeah
 `canvas` - facilitates 2D drawing and animation, requires javascript to work
+#### SVG Path Code
+M = moveto
+L = lineto
+H = horizontal lineto
+V = vertical lineto
+C = curveto
+S = smooth curveto
+Q = quadratic Bézier curve
+T = smooth quadratic Bézier curveto
+A = elliptical Arc
+Z = closepath
