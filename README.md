@@ -287,3 +287,25 @@ Z = closepath
 ### Command for running simon
 ./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
 This deletes previous deployment of simon, copies all of the files in the directory, and tells caddy to host the files under the simon subdomain.
+
+## CSS (Cascading Style Sheets)
+animate, display custom fonts, respond to user actions, alter layout of page dynamically based off of device being used
+Functionality of CSS
+- defining rulesets or rules
+- a rule is comprised of a `selector` that selects elements to apply the rule to, as well as a `declaration` or two or however many that represent the `property` to style with the given `property value`.
+consider this rule:
+EX. `selector`p{
+ `property`color: green;`green is the value`
+ `line is the declaration`
+}
+Ex. p {
+      color: green;
+    }
+The following rule:
+Ex. p {
+      font-family: sans-serif;
+      font-size: 2em;
+      color: navy;
+      text-shadow: 3px 3px 1px #cccccc;
+    }
+selector p selects all paragraph elements in the doc. The 4 declarations then change font, increase size, change text color, create a shadow.
