@@ -309,3 +309,59 @@ Ex. p {
       text-shadow: 3px 3px 1px #cccccc;
     }
 selector p selects all paragraph elements in the doc. The 4 declarations then change font, increase size, change text color, create a shadow.
+### Associate CSS w/ HTML
+1. use the style attrtibute on an HTML element and explicitly assign one or more declarations.
+ex. `<p style="color: green">CSS</p>`
+2. use the style ELEMENT- not attribute- to define CSS rules w/in the doc. This should appread in the head element of the doc so the rules apply to the whole thing.
+3. use the link element to create a hyperlink reference to an external file containing CSS rules. This must also be in the head element. This is the preferred way.
+Elements inherit the rules applied to their parents, so lower level declarations override higher level ones to allow for specificity.
+### The box model
+CSS defines everything as a box. Styles apply to everything in the box. Inner to Outer.
+- the element's content (text)
+- the padding (stuff like background color)
+- border (color, thickness, line style)
+- margin (considered external to the styling of the box and so represents whitespace)
+The default width and height of an element is the width and height of the content box (the innermost box). YOu can changed the `box-sizing` CSS property from default `content-box` to `border-box` to redefine width and height to also include padding and border. This can make it easier to style elements when their visual size matches their actual size.
+### Selectors
+the selector will determine which elements are affected by the rule. `*` is a wildcard selector that selects all elements.
+You can be more specific with selectors by using `descendant combinators`. For instance, saying section h2 {
+  color: #004400;
+}
+would only apply the color to h2 elements who were within or "descended from" section elements.
+#### Combinators
+- Descendant - anything within; div p (selects all p elements within div elements)
+- Child - one level within; div > p (selects all p elements that )
+- General Sibling - div ~ p (selects all p that follow a div and have the same parent elements as div)
+- Adjacent Sibling - div + p (selects p that is immediately following a div and has the same parent elements as div)
+#### Class Selectors
+any element can have 0 or more classifications
+to use the classification in a rule do
+.classnamehere {
+  stuff to implement
+}
+you can also combine element with class
+ex.
+p.summary{
+  stuff
+}
+this changes all p items of summary class.
+#### ID Selector
+prefix id with `#`
+ex.
+#idhere {
+  stuff
+}
+changes the element with that id.
+#### Attribute Selector
+support wildcards
+ex.
+p[class='summary'] {
+  color: red;
+}
+this changes all p elements with the class attribute of summary
+a[href] selects every a element with the href attribute
+#### Psuedo Selector
+section:hover {
+  blah blah
+}
+changes the section only when mouse is hovering over it.
