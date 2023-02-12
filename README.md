@@ -422,3 +422,29 @@ will rotate the screen 270degrees when the app is in portrait mode
   }
 }
 will not display asides when the viewport is in portrait mode
+#### Grid
+`grid` is useful when you want to display a group of child elements in a responsive grid
+ex.
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  grid-gap: 1em;
+}
+`grid-template-colums` lets us layout the columns here we repeatedly define each column to autofill the width of the parent with children that are resized to a min of 300px and a max of 1fr whic is a fractional unit of grid width or equal to the parent element split into equal parts for the children
+figure out the other ig.
+#### Flexbox
+-useful when you want to partition your app into areas that responsively move around as the window resizes or the orientation changes.
+- children inside of a flex display are given the `flex` property which tells the browser what proportion of the available space each child will get.
+`flex-direction` can take on 4 values. default is row (left to right), then row-reverse (right to left) then column and column-reverse. These represent the main axis of ordering the flex children.
+#### Design Layout
+`text-align: center` can center your text horizontally
+`line-height: (insert 1/2height of element)` will center the text vertically
+`align-items: center` aligns items along the cross axis of the flex container; centers them
+`justify-content: center` aligns items along the main axis of the flex container; centers them.
+### Debugging CSS
+use browser developer tools.
+### CSS Frameworks
+lots of code for repeatable layouts
+- Tailwind
+- Bootstrap - the most popular and successful and has come to define what the layout of a webpage should be. Integrate by referencing the CSS files from their content delivery network (CDN) 
