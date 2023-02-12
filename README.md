@@ -365,3 +365,60 @@ section:hover {
   blah blah
 }
 changes the section only when mouse is hovering over it.
+### CSS Fonts
+`font-family` property defines what fonts should be used. The value represents an ordered list of fonts of which the first one will be used by default.
+- 4 major font families: serif, san-serif, fixed, and symbol. serif is a small stroke attached to ends of a characters major strokes. san-serif is without the serif. fixed means all characters the same size. symbol is non-language characters.
+@font-face{
+  font-family: 'blah blah';
+  src: url('blahblah');
+}
+This lets the browser load a font you give the source for so that your app looks the same on every device. You can either host font files on your server or load from a font provider like google fonts.
+### CSS Animation
+use animation properties and define keyframes for what the element should look like at different times in the animation
+first put
+animation-name: namehere
+animation-duration: #s;
+in the element you want animated
+Then in the CSS doc put
+@keyframes namehere{
+  from{
+    initial state of animation
+  }
+  83 {
+    this section is optional, but you can add sections between from and to which happen at the percentage through the animation of the number you enter. This happenn 83% of the way through the animation.
+  }
+  to{
+    final state of animation
+  }
+}
+CSS will figure out how to get from state to state.
+### Responsive Design
+-the ability to reconfigure the interface based off of the device running the webiste
+#### Design
+- `display` in CSS will allow you to change how an HTML element is displayed by the browser. Common values
+- `none` don't display element. 
+- `block` display element with a width that fills its parent element. (p and div have block display by deault)
+- `inline` display element with a width that is only as big as its content (b and span have inline as default)
+- `flex` display this element's children in a flexible orientation.
+- `grid` display elements children in a grid orientation.
+#### Viewport
+to make it good on phone and desktop.
+include a meta tag in the head element of all your HTML pages. This tells the browser not to scale the page.
+`<meta name="viewport" content="width=device-width,initial-scale=1" />`
+#### Float
+`float` moves an element to the left or right of its container element and allows inline elements to wrap around it. 
+#### Media Queries
+`@media` dynamically detects the size and orientation of the device and applies CSS rules to represent the structure of the HTML in a way that accomodates the change.
+- tells us which side of the viewport is the longest.
+@media (orientation: portrait) {
+  div {
+    transform: rotate(270deg);
+  }
+}
+will rotate the screen 270degrees when the app is in portrait mode
+@media (orientation: portrait) {
+  aside {
+    display: none;
+  }
+}
+will not display asides when the viewport is in portrait mode
