@@ -17,6 +17,41 @@ You choose the background to your garden. You choose from preset models which pl
 ./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
 This deletes previous deployment of simon, copies all of the files in the directory, and tells caddy to host the files under the simon subdomain.
 I learned a ton about the different html elements and their attributes and what they actually do. For example, the for attribute associates with an id and links the label to the input box so that when you click the name you are directed to the input. In addition I took it upon myself to study the paths and how that works. I learned that M is moveto and basically just specifies a point and another and another until you have a shape that can be filled. Unlike M, L actually draws lines as it moves. Q makes a quadratic curve starting that the last point previous to Q and going to the second input of Q. The first Q input is the focal point. I also learned how coordinates are counted in the viewBox. They start at the top left which is 0,0. Down is positive y, right is positive x. I was also able to just really get in my head how certain elements can be used and the organization of a page is displayed. It was confusing for a while because it seemed like many elements didn't produce noticeable effects, but now I'm seeing the potential for a lot of these division to be used for styling and interactivity purposes which really cleared a lot of confusion. I also learned that readonly is applied to input when you want it to just be display and not have the user input anything. Overall it was mostly learning about individual attributes and elements of which I made note of in repsective sections of this document. 
+## Simon Feb 14 CSS What I learned
+So most of what I learned was a ton of CSS properties and value possibilities. Thank you internet and ChatGPT for helping me understand. There is just so many and it's impossible to keep them all in your head when you're a beginner so it was good to have stuff I could ask on the spot to remind me. Most of what I learned is typed in this document but I will paste it here.
+
+Positioning Functions
+- float moves an element to the left or right of its container element and allows inline elements to wrap around it. 
+- gap: value - This property is specified as a value for <'row-gap'> followed optionally by a value for <'column-gap'>. If <'column-gap'> is omitted, it's set to the same value as <'row-gap'>. Used in grids. synonymous with grid-gap: value;
+- margin: top right bottom left;
+- top: value - moves the element a distance from the top of its container. takes % as well
+- bottom: val - moves element up a distance from the bottom of its container, etc
+- right
+- left
+- translateX() - moves an element horizontally on the 2D plane. It takes a distance value as a parameter, which can be specified in pixels (px), ems (em), or other length units, and indicates how far to move the element along the horizontal axis. Negative moves left, positive moves right; if you use a percent it refers to a percent of the element's own width and height; DOES NOT AFFECT STATIC ELEMENTS
+- translateY() - same as X but vertical
+- transform: translateX() translateY() - transform property allows you to apply a transformation to the element while keeping its position and layout within the document flow intact. transform allows you to act on static elements
+- flex: flex-grow flex-basis; flex-grow defines how much the item will grow to fill around it. 1 means it will fill all available space. flex-basis is the value that says the intitial size of the flex item.
+margin-top: val - sets the margin space on the top
+margin-botton
+margin-left
+margin-right
+
+Design Functions
+- border-radius: 50% will make a circle; it gets complicated after that with all the values
+- width: 100% - sets the width equal to the width of the parent element
+
+CSS Units and Definitions
+80vmin - 80 percent of the viewport's smaller dimension
+px - pixels
+em - the font size of the parent element
+content box - the element; default size of element;
+padding - the next out, clears an area around the content. The padding is transparent; default 0
+border- the edge; default 0
+margin- empty space between elements if you add it; default 0
+fr - only availabe in display: grid; means fraction of available space. 1fr means all of the available space. You can also combine them in rations so 1fr and 2fr would split the space into three parts and give 1 part to an element and 2 parts to another
+
+That is not an exhaustive list but mostly what I learned is that CSS is very complicated and frustrating especially because I'm still trying to figure out how everything interacts. As I went through the Simon doc and typed out everything you had in the original simon, I made sure to understand what every property and parameter meant so that I could absorb it better. I also learned a lot about bootstrap custom classes and how they make life a little easier especially with their prefabricated color schemes.
 ## Class Stuff
 - `ssh -i filename ubuntu@IPaddress`
  server link: https://us-east-2.console.aws.amazon.com/ec2/home?region=us-east-2#ElasticIpDetails:AllocationId=eipalloc-063765021d2a9237d 
@@ -454,8 +489,39 @@ using position: value;
 
 "relative": This value positions the element relative to its normal position, without affecting the position of other elements on the page.
 
-"absolute": This value positions the element relative to its closest positioned ancestor (i.e., an ancestor with a position value other than "static"), or the containing block if there is no positioned ancestor.
+"absolute": This value positions the element relative to its closest positioned ancestor (i.e., an ancestor with a position value other than "static"), or the containing block if there is no positioned ancestor. ( useful bc they are removed from the normal flow and can overlap other elements.)
 
 "fixed": This value positions the element relative to the browser window, so it remains in the same position even if the page is scrolled.
 
 Each of these values can be further adjusted with additional properties such as top, right, bottom, and left to specify the exact position of the element on the page.
+### CSS Functions
+#### Returning Functions
+- The "min()" function in CSS returns the smaller of two or more comma-separated values.
+#### Positioning Functions
+- float moves an element to the left or right of its container element and allows inline elements to wrap around it. 
+- gap: value - This property is specified as a value for <'row-gap'> followed optionally by a value for <'column-gap'>. If <'column-gap'> is omitted, it's set to the same value as <'row-gap'>. Used in grids. synonymous with grid-gap: value;
+- margin: top right bottom left;
+- top: value - moves the element a distance from the top of its container. takes % as well
+- bottom: val - moves element up a distance from the bottom of its container, etc
+- right
+- left
+- translateX() - moves an element horizontally on the 2D plane. It takes a distance value as a parameter, which can be specified in pixels (px), ems (em), or other length units, and indicates how far to move the element along the horizontal axis. Negative moves left, positive moves right; if you use a percent it refers to a percent of the element's own width and height; DOES NOT AFFECT STATIC ELEMENTS
+- translateY() - same as X but vertical
+- transform: translateX() translateY() - transform property allows you to apply a transformation to the element while keeping its position and layout within the document flow intact. transform allows you to act on static elements
+- flex: flex-grow flex-basis; flex-grow defines how much the item will grow to fill around it. 1 means it will fill all available space. flex-basis is the value that says the intitial size of the flex item.
+margin-top: val - sets the margin space on the top
+margin-botton
+margin-left
+margin-right
+#### Design Functions
+- border-radius: 50% will make a circle; it gets complicated after that with all the values
+- width: 100% - sets the width equal to the width of the parent element
+### CSS Units and Definitions
+80vmin - 80 percent of the viewport's smaller dimension
+px - pixels
+em - the font size of the parent element
+content box - the element; default size of element;
+padding - the next out, clears an area around the content. The padding is transparent; default 0
+border- the edge; default 0
+margin- empty space between elements if you add it; default 0
+fr - only availabe in display: grid; means fraction of available space. 1fr means all of the available space. You can also combine them in rations so 1fr and 2fr would split the space into three parts and give 1 part to an element and 2 parts to another
