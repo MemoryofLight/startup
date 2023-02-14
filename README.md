@@ -448,3 +448,14 @@ use browser developer tools.
 lots of code for repeatable layouts
 - Tailwind
 - Bootstrap - the most popular and successful and has come to define what the layout of a webpage should be. Integrate by referencing the CSS files from their content delivery network (CDN) 
+### CSS Position
+using position: value;
+"static": This is the default value, and it means that the element is positioned according to the normal flow of the page.
+
+"relative": This value positions the element relative to its normal position, without affecting the position of other elements on the page.
+
+"absolute": This value positions the element relative to its closest positioned ancestor (i.e., an ancestor with a position value other than "static"), or the containing block if there is no positioned ancestor.
+
+"fixed": This value positions the element relative to the browser window, so it remains in the same position even if the page is scrolled.
+
+Each of these values can be further adjusted with additional properties such as top, right, bottom, and left to specify the exact position of the element on the page.
