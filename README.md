@@ -196,12 +196,13 @@ attributes describe specific details of the element. ex. the `id` attribute give
 - `class` attribute- designates element as beeing classified into a named group of elements. 
 -written in the element tag with aname followed by an optional value. 
 `<p id="hello" class="greeting">Hello world</p>`
-##### Common attributes
+##### Common Input attributes
 `name` name of imput. submitted as the name of the input if used in a form, can be used to reference the element in javascript
 `disabled` disables the ability for the user to interact with the input
 `value` the initial value of the input
 `required` signifies that a value is required in order to be valid
 `for` associates label with a control element
+`placeholder` - used to make a phantom value in an input box
 
 #### Hyperlinks
 -represented with an anchor `a` element that has an attribute containing the address of the hyperlink reference.
@@ -525,3 +526,7 @@ padding - the next out, clears an area around the content. The padding is transp
 border- the edge; default 0
 margin- empty space between elements if you add it; default 0
 fr - only availabe in display: grid; means fraction of available space. 1fr means all of the available space. You can also combine them in rations so 1fr and 2fr would split the space into three parts and give 1 part to an element and 2 parts to another
+
+### Bootstrap stuff
+- container-fluid - the container will span the entire width of the viewport.
+- container - has a fixed left and right margin

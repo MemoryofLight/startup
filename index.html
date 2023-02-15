@@ -16,20 +16,22 @@
           crossorigin="anonymous"
         />
     </head>
-    <body>
-        <header>
+    <body> <!--change this color-->
+        <header class="container-fluid">
             <h1>Plantarium</h1>
-            <h2>Plant. Grow. Share.</h2>
         </header>
 
-        <main>
-            <nav>
-                <menu>
-                    <button><li><a href="build.html">Make My Plant</a></li></button>
-                    <button><li><a href="garden.html">My Garden</a></li></button>
-                    <button><li><a href="friends.html">Friends</a></li></button>
-                </menu>
-            </nav>
+        <main class="bg-dark">
+            <section class="sign-in bg-light">
+                <div class="username">
+                    <label for="user">Username</label>
+                    <input id="user" name="username" placeholder="username" type="text" />
+                </div>
+                <div class="password">
+                    <label for="pass">Password</label>
+                    <input id="pass" name="password" placeholder="password" type="text" />
+                </div>
+            </section>
         </main>
     </body>
 </html>
