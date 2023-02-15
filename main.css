@@ -1,45 +1,61 @@
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
     background-image: url(homebackground.jpg);
+    background-position: -35px;
+    height: 100vh
 }
 
-header{
+header{ /*change color*/
     background-image: linear-gradient(rgb(40, 161, 54), rgb(117, 246, 132));
     text-align: center;
     color: white;
 }
 
 main{
+    flex: 1;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    flex: 1 calc(100vh - 110px);
+    justify-content: center;
 }
 
 .sign-in{
+    background-color: #60af32;
+    border-radius: 20px;
+    border: thick solid #396320;
+    min-width: 25vmax;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 1
+    text-align: center;
+    transform: translateY(-30px);
 }
 
 .username{
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50%;
 }
 
 .password{
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    margin: 10px;
+}
+
+#sign-in{
+    flex: 1;
+    margin: 10px;
+    line-height: 100%; /*why is the Sign in not centered?*/
+}
+
+#sign-in-button{
+    color: #396320;
 }
 
 label{
@@ -53,4 +69,16 @@ input {
 
 input::placeholder{
     text-align: center;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#temporary{
+    color: red;
+    margin-top: -5em;
+    font-size: large;
 }
