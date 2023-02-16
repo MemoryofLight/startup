@@ -1,0 +1,87 @@
+.build{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw; 
+}
+
+header{ /*change color*/
+    background-image: linear-gradient(rgb(40, 161, 54), rgb(117, 246, 132));
+    text-align: center;
+    color: white;
+}
+
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plant-selection{
+    display: flex;
+    flex: 1;
+}
+
+.left-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.right-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.left{ 
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid yellow;
+}
+
+.right{
+}
+
+.build-mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 30vw;
+}
+
+.plant-parts{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+
+
+label{
+    margin: 10px;
+}
+
+input {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

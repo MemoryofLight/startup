@@ -1,4 +1,4 @@
-body{
+.home{
     display: flex;
     flex-direction: column;
     background-image: url(homebackground.jpg);
@@ -85,3 +85,5 @@ footer{
 }
 
 /*add media queries*/
+/*Now we add the build CSS*/
+

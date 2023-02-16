@@ -514,13 +514,18 @@ margin-top: val - sets the margin space on the top
 margin-botton
 margin-left
 margin-right
+margin: 50% - the margin will be 50% the width of its containing block.
 #### Design Functions
 - border-radius: 50% will make a circle; it gets complicated after that with all the values
 - width: 100% - sets the width equal to the width of the parent element
 ### CSS Units and Definitions
 80vmin - 80 percent of the viewport's smaller dimension
 px - pixels
+vh - viewport height
+vw -viewport width
 em - the font size of the parent element
+rem - the font size of the root element.
+root element - the highest level element in the document, usually the `<html>` tag
 content box - the element; default size of element;
 padding - the next out, clears an area around the content. The padding is transparent; default 0
 border- the edge; default 0

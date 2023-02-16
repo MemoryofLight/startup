@@ -6,7 +6,7 @@
         <title>Plantarium</title>
         <!--put a link to an image here-->
 
-        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="build.css" />
 
         <!-- Include bootstrap CSS framework -->
         <link
@@ -17,16 +17,34 @@
         />
     </head>
     
-    <body>
-        <main>
-            <button id="ptleft" class="planttop"></button>
-            <button id="ptright" class="planttop"></button>
-            <button id="ppleft" class="plantparts"></button>
-            <button id="ppright" class="plantparts"></button>
-            <button id="pmleft" class="plantmid"></button> <!--These buttons are for choosing the plants-->
-            <button id="pmright" class="plantmid"></button>
-            <button id="potleft" class="pot"></button>
-            <button id="potright" class="pot"></button>
+    <body class="build bg-dark">
+        <header class="container-fluid">
+            <h1>Plantarium</h1>
+        </header>
+        <main class="container-fluid bg-light">
+            <h2 id="plant-parts-header">Make Your Plant</h2>
+            <section class=plant-selection>
+                <div class="left-buttons">
+                    <button id="ptleft" class="left"></button>
+                    <button id="ppleft" class="left"></button>
+                    <button id="pmleft" class="left"></button> <!--These buttons are for choosing the plants-->
+                    <button id="potleft" class="left"></button>
+                </div>
+                <section class="build-mid">
+                    <section class="plant-parts">
+                        <div class="plant-top">Plant Top</div>
+                        <div class="plant-accesories">Plant Parts</div>
+                        <div class="plant-middle">Plant Middle</div>
+                        <div class="plant-pot">Plant Pot</div>
+                    </section>
+                </section>
+                <div class="right-buttons">
+                    <button id="ptright" class="right"></button>
+                    <button id="ppright" class="right"></button>
+                    <button id="pmright" class="right"></button>
+                    <button id="potright" class="right"></button>
+                </div>
+            </section>
         </main>
 
         <footer>
