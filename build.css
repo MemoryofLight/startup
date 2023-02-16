@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
+
 .build{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 100vw; 
+    width: 100vw;
+    position: relative;    
+    background-image: url(buildbackground.png);
+    background-size: cover;
 }
 
 header{ /*change color*/
@@ -16,11 +21,14 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .plant-selection{
     display: flex;
     flex: 1;
+    border-radius: 15%;
+    border: thick solid rgb(29, 93, 29);
 }
 
 .left-buttons{
@@ -30,6 +38,12 @@ main{
     height: 100%;
 }
 
+.left{
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 30px solid green;
+}
+
 .right-buttons{
     display: flex;
     flex-direction: column;
@@ -37,15 +51,12 @@ main{
     height: 100%;
 }
 
-.left{ 
+.right{
     width: 0;
     height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-right: 20px solid yellow;
-}
-
-.right{
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 30px solid green;
 }
 
 .build-mid{
@@ -63,15 +74,19 @@ main{
     justify-content: space-around;
 }
 
-
-
-
+#plant-parts-header{
+    color: white;
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: rgba(117, 67, 67, 0.658);
+    width: 25vw;
+    text-align: center;
+}
 
 label{
     margin: 10px;
 }
 
-input {
+input{
     border-radius: 10px;
     padding: 10px;
 }
@@ -81,7 +96,23 @@ input::placeholder{
 }
 
 footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    height: 10vh;
+}
+
+#plantbutton{
+    position: absolute;  /*how do I center plant within this button?*/
+    left: 15vmax;
+    border-radius: 50%;
+    background-color: rgb(106, 56, 56);
+    border: thin solid white;
+    top: 50vh;
+    height: 15vh;
+    width: 15vh;
+    font-size: xx-large;
+}
+
+nav{
+    float: right;
+    margin-right: 20px;
 }
