@@ -6,7 +6,7 @@
         <title>Plantarium</title>
         <!--insert a link here maybe to a good photo to go with the title-->
 
-        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="garden.css" />
 
         <!-- Include bootstrap CSS framework -->
         <link
@@ -17,21 +17,27 @@
         />
     </head>
 
-    <body>
-        <main>
-            <button class="gardenplant"></button>
-            <button class="gardenplant"></button> <!--I'm sure we will need more buttons-->
-            <button class="gardenplant"></button>
-        </main>
-    </body>
+    <body class="garden">
+        <header class="container-fluid">
+            <h1>Your Garden</h1>
+        </header>
 
-    <footer>
-        <nav>
-            <menu>
-                <button><li><a href="index.html">Home</a></li></button>
-                <button><li><a href="build.html">Make My Plant</a></li></button>
-                <button><li><a href="friends.html">Friends</a></li></button>
-            </menu>
-        </nav>
-    </footer>
+        <main class="container-fluid">
+            <div class="plants">
+                <input type="image" class="addplant" src="addplant.png" />
+                <input type="image" class="addplant" src="addplant.png" />
+                <input type="image" class="addplant" src="addplant.png" />
+            </div>
+            <nav>
+                <input type="image" id="home-button" src="leafbutton.png" />
+                <input type="image" id="Friends" src="leafbutton.png" />
+            </nav>
+        </main>
+        <footer>
+            This footer is temporary until javascript is running.
+            <button class="bg-info"><a href="index.html">Home</a></button>
+            <button class="bg-info"><a href="build.html">Make My Plant</a></button>
+            <button class="bg-info"><a href="friends.html">Friends</a></button>
+        </footer>
+    </body>
 </html>
