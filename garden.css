@@ -41,6 +41,7 @@ nav{
 }
 
 .addplant{
+    position: absolute;
     width: 20px;
     height: 20px;
 }
@@ -48,4 +49,19 @@ nav{
 footer{
     background-color: rgb(40, 84, 60);
     color: white;
+}
+
+#bench{
+    top: 69%;
+    left: 26%;
+}
+
+#middle{
+    top: 85%;
+    left: 45%;
+}
+
+#right{
+    top: 90%;
+    left: 65%;
 }
