@@ -65,3 +65,9 @@ footer{
     top: 90%;
     left: 65%;
 }
+
+@media (max-height: 600px){
+    header{
+        display: none;
+    }
+}

@@ -84,6 +84,9 @@ footer{
     font-size: large;
 }
 
-/*add media queries*/
-/*Now we add the build CSS*/
+@media (max-height: 600px){
+    header{
+        display: none;
+    }
+}
 

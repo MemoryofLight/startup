@@ -29,14 +29,20 @@ main{
 }
     
 .friend{
-    background-color: lightgreen;
+    background-color: rgb(30, 75, 30);
     padding: 5px;
     border-radius: 5px;
     font-weight: bold;
 }
     
 .non-friend{
-    background-color: palegreen;
+    background-color: rgb(200, 237, 200);
     padding: 5px;
     border-radius: 5px;
+}
+
+@media (max-height: 600px){
+    header{
+        display: none;
+    }
 }
