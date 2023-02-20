@@ -6,7 +6,7 @@
         <title>Plantarium</title>
         <!--insert a link here maybe to a good photo to go with the title-->
 
-        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="friends.css" />
 
         <!-- Include bootstrap CSS framework -->
         <link
@@ -17,25 +17,27 @@
         />
     </head>
 
-    <body>
+    <body class="friends">
         <header>
             <h1 id="friendsheader">My Friends</h1>
         </header>
 
-        <main>
-            <p>Ideally I want a list of friends to appear here--
-                based on the users that are currently on the app.
-            </p>
+        <main class="container-fluid">
+            <div class="user-list">
+                <ul>
+                  <li><span class="username friend">John Doe</span> <a href="#">Add friend</a></li>
+                  <li><span class="username non-friend">Jane Smith</span> <a href="#">Add friend</a></li>
+                  <li><span class="username friend">Bob Johnson</span> <a href="#">Add friend</a></li>
+                  <li><span class="username non-friend">Sara Lee</span> <a href="#">Add friend</a></li>
+                </ul>
+              </div>
         </main>
 
         <footer>
-            <button><h3 id="choosefriends">Request Friends</h3></button>
                 <nav>
-                    <menu>
-                        <button><li><a href="index.html">Home</a></li></button>
-                        <button><li><a href="build.html">Make My Plant</a></li></button>
-                        <button><li><a href="garden.html">My Garden</a></li></button>
-                    </menu>
+                    <button class="bg-info"><a href="index.html">Home</a></button>
+                    <button class="bg-info"><a href="build.html">Make My Plant</a></button>
+                    <button class="bg-info"><a href="garden.html">My Garden</a></button>
                 </nav>
         </footer>
     </body>

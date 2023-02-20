@@ -1,0 +1,42 @@
+.friends{
+    height: 100vh;
+    width: 100vw;
+    background: url(friendsbackground.png);
+    background-size: cover;
+}
+
+header{ /*change color*/
+background-image: linear-gradient(rgb(40, 161, 54), rgb(117, 246, 132));
+text-align: center;
+color: white;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-list{
+    border: 2px solid darkgreen;
+    padding: 10px;
+    top: -30vh;
+    position: relative;
+    background-color: white;
+    border-radius: 10%;
+}
+    
+.friend{
+    background-color: lightgreen;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+    
+.non-friend{
+    background-color: palegreen;
+    padding: 5px;
+    border-radius: 5px;
+}
