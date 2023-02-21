@@ -7,6 +7,7 @@
         <!--insert a link here maybe to a good photo to go with the title-->
 
         <link rel="stylesheet" href="garden.css" />
+        <link rel="stylesheet" href="headerfooter.css"/>
 
         <!-- Include bootstrap CSS framework -->
         <link
@@ -17,9 +18,22 @@
         />
     </head>
 
-    <body class="garden">
+    <body>
         <header class="container-fluid">
-            <h1>Your Garden</h1>
+            <nav class="navbar fixed-top navbar-dark">
+                <a class="navbar-brand" href="#">Plantarium</a>
+                <menu class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="garden.html">My Garden</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="build.html">Make Plant</a>
+                    </li>
+                </menu>
+            </nav>
         </header>
 
         <main class="container-fluid">
@@ -28,16 +42,10 @@
                 <input type="image" class="addplant" id="middle" src="addplant.png" />
                 <input type="image" class="addplant" id="right" src="addplant.png" />
             </div>
-            <nav>
-                <input type="image" id="home-button" src="leafbutton.png" />
-                <input type="image" id="Friends" src="leafbutton.png" />
-            </nav>
         </main>
-        <footer>
-            This footer is temporary until javascript is running.
-            <button class="bg-info"><a href="index.html">Home</a></button>
-            <button class="bg-info"><a href="build.html">Make My Plant</a></button>
-            <button class="bg-info"><a href="friends.html">Friends</a></button>
+
+        <footer class="container-fluid">
+            <a href="https://github.com/MemoryofLight/startup">Source</a> Alex Walbom
         </footer>
     </body>
 </html>

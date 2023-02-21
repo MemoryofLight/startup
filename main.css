@@ -1,25 +1,12 @@
-.home{
-    display: flex;
-    flex-direction: column;
-    background-image: url(homebackground.jpg);
-    background-position: -35px;
-    height: 100vh;
-    width: 100vw;
-}
-
-header{ /*change color*/
-    background-image: linear-gradient(rgb(40, 161, 54), rgb(117, 246, 132));
-    text-align: center;
-    color: white;
-}
-
-main{
+  
+  main {
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
+    justify-content: space-around;
+  }
+  
 .sign-in{
     background-color: #60af32;
     border-radius: 20px;
@@ -84,9 +71,4 @@ footer{
     font-size: large;
 }
 
-@media (max-height: 600px){
-    header{
-        display: none;
-    }
-}
 
