@@ -1,38 +1,21 @@
 
-
-input{
-    margin-right: 20%;
-}
-
 main{
     flex: 1;
+    flex-direction: row;
     display: flex;
-    position: relative;
     height: 100%;
     width: 100%;
 }
 
 .plants{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows:200px;
+    grid-gap:1em;
     flex: 1;
 }
 
-.addplant{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-}
-
-#bench{
-    top: 69%;
-    left: 26%;
-}
-
-#middle{
-    top: 85%;
-    left: 45%;
-}
-
-#right{
-    top: 90%;
-    left: 65%;
+.plant{
+    width: 200px;
+    height: 200px;
 }
