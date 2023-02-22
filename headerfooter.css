@@ -25,3 +25,7 @@ header {
     flex-direction: row !important;
     list-style: none;
   }
+
+  .nav-item{
+    margin-right: 10px;
+  }
