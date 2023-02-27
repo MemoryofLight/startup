@@ -569,6 +569,7 @@ Then you can call add as if it was the function name
 You can pass functions to other functions as parameters
 basically you can do anything to a function you can do to a variable and I don't like that at all
 Inner functions - functions can be declared within other functions. YUCK.
+Arrow functions - (optional parameters) => return statement (use brackets if you have more than one statment of executing code in your arrow function)
 
 ### Loops
 same for, while, do while
@@ -587,6 +588,19 @@ for (const val of arr) {
 }
 // OUTPUT: 'a'
 // OUTPUT: 'b'
+### Array Functions
+push	Add an item to the end of the array	a.push(4)
+pop	Remove an item from the end of the array	x = a.pop
+slice	Return a sub-array	a.slice(1,-1)
+sort	Run a function sort an array in place	a.sort((a,b) => b-a)
+values	Creates an iterator for use with a for of loop	for (i of a.values()) {...}
+find	Find the first item satisfied by a test function	a.find(i => i < 2)
+forEach	Run a function on each array item	a.forEach(console.log)
+reduce	Run a function to reduce each array item to a single item	a.reduce((a, c) => a + c)
+map	Run a function to map an array to a new array	a.map(i => i+i)
+filter	Run a function to remove items	a.filter(i => i%2)
+every	Run a function to test if all items match	a.every(i => i < 3)
+some	Run a function to test if any items match	a.some(i => 1 < 1)
 ### Functions
 console.log() - outputs string to console
 console.functionName() - does something with the developer console (not the screen)
@@ -599,3 +613,65 @@ function join(a, b) {
 That is for writing your own functions
 end lines with ;
 `onclick` attribute in HTML is followed by a value that specificies what Javacode to call.
+
+### Objects and Classes and Inheritance
+Function	Meaning
+.entries	Returns an array of key value pairs
+.keys	Returns an array of keys
+.values	Returns an array of values
+You can assign random properties to the object
+function Person(name) {
+  return {
+    name: name,
+    log: function () {
+      console.log('My name is ' + this.name);
+    },
+  };
+}
+
+const p = new Person('Eich');
+p.log();
+// OUTPUT: My name is Eich
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  log() {
+    console.log('My name is ' + this.name);
+  }
+}
+
+const p = new Person('Eich');
+p.log();
+You can make class functions and variables private by putting #before them.
+
+Inheritance:
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  print() {
+    return 'My name is ' + this.name;
+  }
+}
+
+class Employee extends Person {
+  constructor(name, position) {
+    super(name);
+    this.position = position;
+  }
+
+  print() {
+    return super.print() + '. I am a ' + this.position;
+  }
+}
+
+const e = new Employee('Eich', 'programmer');
+console.log(e.print());
+// OUTPUT: My name is Eich. I am a programmer
+
+super lets you reference the parent function. extends is the way you define inheritance in Javascript
