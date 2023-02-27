@@ -537,3 +537,65 @@ fr - only availabe in display: grid; means fraction of available space. 1fr mean
 ### Bootstrap stuff
 - container-fluid - the container will span the entire width of the viewport.
 - container - has a fixed left and right margin
+## Javascript
+include directly in the HTML file or use a separate file and the src parameter in HTML `<script>` element.
+declare variable with `let` or `const`
+Null	The type of a variable that has not been assigned a value.
+Undefined	The type of a variable that has not been defined.
+Boolean	true or false.
+Number	A 64 bit signed number.
+BigInt	A number of arbitrary magnitude.
+String	A textual sequence of characters.
+Symbol	A unique value.
+Objects in JavaScript
+Object	A collection of properties represented by name value pairs. Values can be of any type.	{a:3, b:'fish'}
+Function	An object that has the ability to be called.	function a() {}
+Date	Calendar dates and times.	new Date('1995-12-17')
+Array	An ordered sequence of any type.	[3, 'fish']
+Map	A collection of key value pairs that support efficient lookups.	new Map()
+JSON	A lightweight data-interchange format used to share information across programs.	{"a":3, "b":"fish"}
+`===` is the equality variable in this language (does not do type conversion)
+`==` does type conversion and can do unexpected things
+strings can do concatenation and equality
+condition ? value if true : value if false  (the ternary operator - ?)
+same comparison for and an or as C++
+### Functions
+parameters can have default values
+Anonymous functions - functions assigned to a variable. these are very weird. 
+const add = function (a, b) {
+  return a + b;
+};
+Then you can call add as if it was the function name
+You can pass functions to other functions as parameters
+basically you can do anything to a function you can do to a variable and I don't like that at all
+Inner functions - functions can be declared within other functions. YUCK.
+
+### Loops
+same for, while, do while
+new loops:
+`for in`
+const obj = { a: 1, b: 'fish' };
+for (const name in obj) {
+  console.log(name);
+}  note that for arrays the obj. name will output an index.
+`for of`
+The for of statement iterates over an iterable's (Array, Map, Set, ...) property values.
+
+const arr = ['a', 'b'];
+for (const val of arr) {
+  console.log(val);
+}
+// OUTPUT: 'a'
+// OUTPUT: 'b'
+### Functions
+console.log() - outputs string to console
+console.functionName() - does something with the developer console (not the screen)
+console.time()
+console.timeEnd() - wrap your code with these two functions to see how long it takes
+console.count() - to see how many times a block of code is called.
+function join(a, b) {
+  return a + ' ' + b;
+}
+That is for writing your own functions
+end lines with ;
+`onclick` attribute in HTML is followed by a value that specificies what Javacode to call.
