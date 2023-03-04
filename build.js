@@ -50,6 +50,14 @@ function rightImage(){
     displayCurrentPlant();
 }
 
+function savePlant(){
+    const currentPlant = plants[plantIndex];
+    const PlantString = JSON.stringify(currentPlant);
+    const encodedPlant = encodeURIComponent(PlantString);
+    window.location.href = 'garden.html?plant=${encodedPlant}';
+}
+
 displayCurrentPlant();
 leftButton.addEventListener('click', leftImage);
 rightButton.addEventListener('click', rightImage);
+plantButton.addEventListener('click', savePlant);
