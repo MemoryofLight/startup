@@ -35,7 +35,6 @@
 
     <main>
         <section class="sign-in">
-            <form method="get" action="garden.html">
                 <div class="username">
                     <label for="user">Username</label>
                     <input id="user" name="username" placeholder="username" type="text" />
@@ -45,9 +44,8 @@
                     <input id="pass" name="password" placeholder="password" type="password" />
                 </div>
                 <div id="sign-in">
-                    <input id="sign-in-button" type="submit" value="Sign In">
+                    <input id="sign-in-button" type="submit" value="Sign In" onclick="login()"/>
                 </div>
-            </form>
         </section>
     </main>
 
@@ -55,5 +53,5 @@
         <a href="https://github.com/MemoryofLight/startup">Source</a> Alex Walbom
     </footer>
 </body>
-
+<script src="login.js"></script>
 </html>
