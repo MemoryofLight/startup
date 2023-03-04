@@ -54,6 +54,8 @@ fr - only availabe in display: grid; means fraction of available space. 1fr mean
 That is not an exhaustive list but mostly what I learned is that CSS is very complicated and frustrating especially because I'm still trying to figure out how everything interacts. As I went through the Simon doc and typed out everything you had in the original simon, I made sure to understand what every property and parameter meant so that I could absorb it better. I also learned a lot about bootstrap custom classes and how they make life a little easier especially with their prefabricated color schemes.
 ## Startup What I learned Feb. 20
 I learned that I actually really dread making these websites. I think I might have bitten off more than I can chew with this project and everything else I have going on. It makes me nauseous to even open up my html and css files. I learned a lot about how to display things and also how not to display things unfortunately that was a large portion of my time. I learned how to link CSS files and align different display forms. I figured out how to put in background images and how to move them to exact positions. I basically solidified my knowledge of all the things I have learned thus far to do with syntax and formatting for CSS. I also learned how to efficiently look things up to do with html and css. The rest of my notes are added throughout this file with tidbits I want to remember.
+## Simon What I learned March 4
+Okay so this was actually a very helpful assignment. I was feeling very discouraged and overwhelmed by the javascript modules because I wasn't understanding, but as I went through the logic of simon and looked up things when I didn't understand, I was able to understand every part of the javascript. Replicating it might be hard but I made sure to type it all out so I could get it in my fingers and memory better. I got a much better grasp on promises and async/await. I also understand a little better how to create and insert elements into the DOM. Thank heavens there weren't that many arrow functions though. Also I learned a bit more about destructuring when it comes to iterating through a loop which I didn't know was possible at the same time.
 ## Class Stuff
 - `ssh -i filename ubuntu@IPaddress`
  server link: https://us-east-2.console.aws.amazon.com/ec2/home?region=us-east-2#ElasticIpDetails:AllocationId=eipalloc-063765021d2a9237d 
@@ -559,7 +561,7 @@ JSON	A lightweight data-interchange format used to share information across prog
 strings can do concatenation and equality
 condition ? value if true : value if false  (the ternary operator - ?)
 same comparison for and an or as C++
-### Functions
+### Function
 parameters can have default values
 Anonymous functions - functions assigned to a variable. these are very weird. 
 const add = function (a, b) {
@@ -614,6 +616,10 @@ That is for writing your own functions
 end lines with ;
 `onclick` attribute in HTML is followed by a value that specificies what Javacode to call.
 When the some() method is called, it iterates through each element in the numbers array, and for each element, it calls the callback function with that element as the argument.
+Array.from(iterable object like a string) - turns it into an array;
+Math.floor() rounds a number down to the nearest int
+Math.random() generates a random number
+setTimeout(() => function to be executed after time, time to delay)
 
 ### Objects and Classes and Inheritance
 Function	Meaning
