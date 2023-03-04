@@ -613,6 +613,7 @@ function join(a, b) {
 That is for writing your own functions
 end lines with ;
 `onclick` attribute in HTML is followed by a value that specificies what Javacode to call.
+When the some() method is called, it iterates through each element in the numbers array, and for each element, it calls the callback function with that element as the argument.
 
 ### Objects and Classes and Inheritance
 Function	Meaning
@@ -675,3 +676,107 @@ console.log(e.print());
 // OUTPUT: My name is Eich. I am a programmer
 
 super lets you reference the parent function. extends is the way you define inheritance in Javascript
+#### Objects
+3 ways to make an object;
+1) define an object literal
+`object = {property: value, property: value, etc...}`
+2) create an instance of Object
+`let objectName = new Object();`
+then you set the property's and values later.
+ojectName.val = x
+objectName.demon = bahamut
+etc..
+3) Use an Object Constructor;
+function objectName(id, name, salary){
+  this.id = id;
+  this.name = name;
+  this.salary = salary;
+}
+### JSON
+JSON doc contains one of the following data types: string, bool, array, number, object, null
+Objects contain zero or more key value pairs. The key is always a string, and the value must be one of the valid JSON data types. Key value pairs are delimited with commas. Curly braces delimit an object, square braces and commas delimit arrays, and strings are always delimited with double quotes.
+Converting to JavaScript
+You can convert JSON to, and from, JavaScript using the JSON.parse and JSON.stringify functions.
+
+const obj = { a: 2, b: 'crockford', c: undefined };
+const json = JSON.stringify(obj);
+const objFromJson = JSON.parse(json);
+
+console.log(obj, json, objFromJson);
+
+// OUTPUT:
+// {a: 2, b: 'crockford', c: undefined}
+// {"a":2, "b":"crockford"}
+// {a: 2, b: 'crockford'}
+Note that in this example, JSON cannot represent the JavaScript undefined object and so it gets dropped when converting from JavaScript to JSON.
+### Regex
+You can create a regular expression using the class constructor or a regular expression literal.
+
+const objRegex = new RegExp('ab*', 'i');
+const literalRegex = /ab*/i;
+The string class has several functions that accept regular expressions. This includes match, replace, search, and split. For a quick test to see if there is a match you can use the regular expression object's test function.
+
+const petRegex = /(dog)|(cat)|(bird)/gim;
+const text = 'Both cats and dogs are pets, but not rocks.';
+
+text.match(petRegex);
+// RETURNS: ['cat', 'dog']
+
+text.replace(petRegex, 'animal');
+// RETURNS: Both animals and animals are pets, but not rocks.
+
+petRegex.test(text);
+// RETURNS: true
+### Rest and Spread
+Rest- prefix a parameter with ... This will make the parameter take the REST of all the parameters. so if I only have two parameters, the last being a rest parameter and I provide 7 arguments, the first will go to the first and the last 6 will all be put in the rest parameter as an array. Rest must be on the last paramter.
+Spread- the opposite of rest. you put the ... in the function call and it separates the array elements into parameters.
+### Destructuring
+const a = [1, 2, 4, 5];
+
+// destructure the first two items from a, into the new variables b and c
+const [b, c] = a;
+COMBINE REST SYNTAX
+const [b, c, ...others] = a;
+
+console.log(b, c, others);
+// OUTPUT: 1, 2, [4,5]
+When destructuring objects, you need to explicitly specify the properties that you want to pull from the source object.
+const o = { a: 1, b: 'animals', c: ['fish', 'cats'] };
+
+const { a, c } = o;
+
+console.log(a, c);
+// OUTPUT 1, ['fish', 'cats']
+You can also put the values into new variables
+const o = { a: 1, b: 'animals', c: ['fish', 'cats'] };
+
+const { a: count, b: type } = o;
+
+console.log(count, type);
+// OUTPUT 1, animals
+### Exceptions
+function connectDatabase() {
+  throw new Error('connection error');
+}
+
+try {
+  connectDatabase();
+  console.log('never executed');
+} catch (err) {
+  console.log(err);
+} finally {
+  console.log('always executed');
+}
+
+// OUTPUT: Error: connection error
+//         always executed
+the finally block just always runs after try even if there was no exception
+try {
+  // normal execution code
+} catch (err) {
+  // exception handling code
+} finally {
+  // always called code
+}
+#### Fallback
+This is when you put a different version of the code in the catch block if an exception is thrown so that you can hopefully still get something you can work with. Ex. using local storage instead of a database because the connection failed.
