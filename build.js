@@ -4,6 +4,13 @@ const plants = [
     {url: './plants/sunflowerflower.png', name: 'sunflower'}
 ];
 
+const plantButton = document.querySelector('#plantbutton');
+const leftButton = document.querySelector('#ptleft');
+const rightButton = document.querySelector('#ptright');
+const currentImgEl = document.querySelector('#currentImg');
+
+let plantIndex = 0;
+
 function fetchPlants(){
     fetch('./plants/')
     .then(response => response.text())
@@ -20,19 +27,29 @@ function fetchPlants(){
 }
 
 function displayCurrentPlant(){
-    currentImgEl.src = plants[plantIndex];
+    currentImgEl.src = plants[plantIndex].url;
 }
 
-fetchPlants();
+function leftImage(){
+    if(plantIndex === 0){
+        plantIndex = plants.length - 1;
+    }
+    else {
+        plantIndex--;
+    }
+    displayCurrentPlant();
+}
+
+function rightImage(){
+    if(plantIndex === (plants.length - 1)){
+        plantIndex = 0;
+    }
+    else{
+        plantIndex++;
+    }
+    displayCurrentPlant();
+}
+
 displayCurrentPlant();
-const plantButton = document.querySelector('#plantbutton');
-const leftButton = document.querySelector('#ptleft');
-const rightButton = document.querySelector('#ptright');
-const currentImgEl = document.querySelector('#currentImg');
-let plantIndex = 0;
-
-
-
-
-leftButton.addEventListener('click', )
-//plantButton.addEventListener('click', savePlant())
+leftButton.addEventListener('click', leftImage);
+rightButton.addEventListener('click', rightImage);
