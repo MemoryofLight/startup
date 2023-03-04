@@ -118,7 +118,7 @@ input::placeholder{
     font-size: xx-large;
 }
 
-.plant{
+#currentImg{
     width: 200px;
     height: 300px;
 }
