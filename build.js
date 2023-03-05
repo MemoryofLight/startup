@@ -51,10 +51,8 @@ function rightImage(){
 }
 
 function savePlant(){
-    const currentPlant = plants[plantIndex];
-    const PlantString = JSON.stringify(currentPlant);
-    const encodedPlant = encodeURIComponent(PlantString);
-    window.location.href = 'garden.html?plant=${encodedPlant}';
+    localStorage.setItem('plant_' + plants[plantIndex].name, JSON.stringify(plants[plantIndex]));
+    window.location.href = "garden.html";
 }
 
 displayCurrentPlant();

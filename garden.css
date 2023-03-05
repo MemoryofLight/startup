@@ -17,8 +17,13 @@ main{
 }
 
 .plant{
-    width: 200px;
+    width: 150px;
     height: 200px;
+}
+
+.addplant{
+    width: 100px;
+    height: 100px;
 }
 
 .remove{

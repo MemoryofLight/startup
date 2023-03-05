@@ -1091,12 +1091,19 @@ JavaScript breakpoint
 With the browser paused in the debugger you can move your mouse cursor over a variable to see its value, see what variables are in scope, set watches on variables, or use the console to interact with the code.
 
 This gives you complete control to inspect what the JavaScript code is doing and experiment with possible alternative directions for the code. Take some time to poke around in the debugger. Learning how to exploit its functionality will make you a much better web developer.
-#### NodeList/querySelectorAll
+### NodeList/querySelectorAll
 When you use the querySelectorAll method, it returns a NodeList containing all the elements that match the specified selector. A NodeList is a collection of nodes (elements, text nodes, or other types of nodes) that can be accessed using array-like syntax, using an index to retrieve a specific element from the list.
 
 However, a NodeList is not exactly the same as an array. It does not have all the same methods as an array, such as map, reduce, or filter. It also does not have all the same properties, such as length. For example, if you try to access the length property of a NodeList, you will get a number, but it may not be the same as the actual number of elements in the list.
 
 That being said, many of the methods that work on arrays can also be used on NodeLists by converting them to arrays using the Array.from method or the spread operator (...). For example, you can convert a NodeList to an array like this:
+### Export data to URL from page
+    const currentPlant = plants[plantIndex];
+    const PlantString = JSON.stringify(currentPlant);
+    const encodedPlant = encodeURIComponent(PlantString);
+    window.location.href = 'garden.html?plant=${encodedPlant}';
 ## Startup Queries
-- can I turn my plant images into buttons so the mouse changes over them?
+- can I turn my addplant image into buttons so the mouse changes over them?
 - what is the importance of index.html?
+- how to center in the grid boxes?
+- add more plants to website.
