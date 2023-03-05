@@ -24,7 +24,10 @@ function loadGrid(){
     clearGrid();
     const gridData = getPlantsFromLocalStorage();
     if(gridData === null){
-        //do stuff here;
+    const addPlant = document.createElement('img');
+    addPlant.classList.add('addplant');
+    addPlant.setAttribute('src', 'addplant.png');
+    plantGrid.appendChild(addPlant);
     }
     else{
     gridData.forEach(element => {
