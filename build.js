@@ -1,8 +1,3 @@
-const plants = [
-    {url: './plants/roseflower.png', name: 'rose'},
-    {url: './plants/tulipflower.png', name: 'tulip'},
-    {url: './plants/sunflowerflower.png', name: 'sunflower'}
-];
 
 const plantButton = document.querySelector('#plantbutton');
 const leftButton = document.querySelector('#ptleft');
