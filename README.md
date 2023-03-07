@@ -1107,3 +1107,23 @@ That being said, many of the methods that work on arrays can also be used on Nod
 - what is the importance of index.html?
 - how to center in the grid boxes?
 - add more plants to website.
+## Test Review
+padding puts space around content of selected elements
+pals before marriage (padd, border, margin);
+CNAME points DNS to another DNS
+A points to IP address
+JSON must have "" around the key and value must never be undefined.
+a.filter() - makes a new array with the values chosen inside
+v.match() - takes a regular expression and chooses values in the array that match
+a.reduce() - takes an array and reduces it to one value
+/A|f/i A or f case insensitive
+CSS font loading from google @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
+.map() - takes array and makes it an array of stuff with different values;
+when javascript console.logs an array, it puts '' around strings.
+subdomain is the whole thing cs260.cs.byu.edu
+for arrow functions {++y} is undefined but ++y returns an incremented y value. If it's one line you do not need a return value.
+Javascript objects do not need quotes around the strings in the keys.
+chmod +x deploy.sh
+sudo deploy.sh //doesn't make any sense
+ls -la deploy.sh
+ssh deploy.sh //doesn't make any sense
