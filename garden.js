@@ -20,6 +20,33 @@ function clearGrid(){
     }
 }
 
+function addPlants(){
+    window.location.href = "build.html";
+}
+
+function compostPlants(name){
+    localStorage.removeItem('plant_' + name);
+    loadGrid();
+}
+
+function getElementId(e){
+    const elementId = e.target.id;
+    compostPlants(elementId);
+}
+
+function implementDelete(){
+    const garbageButtons = document.querySelectorAll('.remove');
+    let buttons = Array.from(garbageButtons);
+    for(const el of buttons){
+        el.addEventListener('click', getElementId);
+    }
+}
+
+function implementAdd(){
+    const addPlantButton = document.querySelector('.addplant');
+    addPlantButton.addEventListener('click', addPlants);
+}
+
 function loadGrid(){
     clearGrid();
     const gridData = getPlantsFromLocalStorage();
@@ -49,29 +76,8 @@ function loadGrid(){
     addPlant.setAttribute('src', 'addplant.png');
     plantGrid.appendChild(addPlant);
     }
-}
-
-function addPlants(){
-    window.location.href = "build.html";
-}
-
-function compostPlants(name){
-    localStorage.removeItem('plant_' + name);
-    loadGrid();
-}
-
-function getElementId(e){
-    const elementId = e.target.id;
-    compostPlants(elementId);
+    implementDelete();
+    implementAdd();
 }
 
 loadGrid();
-const garbageButtons = document.querySelectorAll('.remove');
-const addPlantButton = document.querySelector('.addplant');
-addPlantButton.addEventListener('click', addPlants);
-let buttons = Array.from(garbageButtons);
-for(const el of buttons){
-    el.addEventListener('click', getElementId);
-}
-
-

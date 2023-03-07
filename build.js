@@ -52,7 +52,7 @@ function rightImage(){
 }
 
 function savePlant(){
-    localStorage.setItem('plant_' + fetchPlants()[plantIndex].name, JSON.stringify(plants[plantIndex]));
+    localStorage.setItem('plant_' + fetchPlants()[plantIndex].name, JSON.stringify(fetchPlants()[plantIndex]));
     window.location.href = "garden.html";
 }
 
