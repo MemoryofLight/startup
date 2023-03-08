@@ -717,6 +717,22 @@ console.log(obj, json, objFromJson);
 // {"a":2, "b":"crockford"}
 // {a: 2, b: 'crockford'}
 Note that in this example, JSON cannot represent the JavaScript undefined object and so it gets dropped when converting from JavaScript to JSON.
+JSON RULES
+Data must be in key-value pair format. Each key-value pair should be separated by a comma (,).
+
+The key and value should be separated by a colon (:).
+
+All keys should be enclosed in double quotes (").
+
+Strings should be enclosed in double quotes ("). Single quotes (') are not allowed.
+
+Numbers can be integers or floats, and can be positive or negative.
+
+The value can be a string, number, boolean (true or false), null, array, or object. Objects and arrays can be nested.
+
+Nested objects and arrays should follow the same syntax rules as the top-level data.
+
+JSON data should be enclosed in curly braces ({}) if it represents an object, or in square brackets ([]) if it represents an array.
 ### Regex
 You can create a regular expression using the class constructor or a regular expression literal.
 
@@ -1115,17 +1131,52 @@ pals before marriage (padd, border, margin);
 CNAME points DNS to another DNS
 A points to IP address
 JSON must have "" around the key and value must never be undefined.
-a.filter() - makes a new array with the values chosen inside
+a.filter() -
+The filter() function in JavaScript is used to create a new array with all elements that pass a certain test implemented by the provided callback function.
+
+The filter() method creates a new array by filtering out the elements that do not pass the specified condition(s). It takes a callback function as its argument, which is executed for each element of the array. The callback function takes three arguments:
+
+currentValue (required) - the value of the current element being processed
+index (optional) - the index of the current element being processed
+array (optional) - the array object that the filter() method was called upon
+The callback function should return a boolean value. If the function returns true, the current element will be added to the new array. If the function returns false, the current element will be skipped.
+
 v.match() - takes a regular expression and chooses values in the array that match
+The match() function in JavaScript is used to search for a specified pattern in a string and returns the matched string or an array of matched strings.
+
+The match() method takes one argument, which is the regular expression pattern to search for. The pattern can be a string or a regular expression object. The method returns an array containing the matched string or an empty array if no match is found.
+
 a.reduce() - takes an array and reduces it to one value
+The reduce() method takes two arguments: a callback function and an initial value for the accumulator. The callback function takes four arguments: the accumulator, the current element, the current index, and the array itself. The function returns the updated value of the accumulator after processing the current element.
+WHEN THE FUNCTION IS JUST TWO PARAMETERS IT IS THE ACCUMULATOR AND THE CURRENT ELEMENT;
+
 /A|f/i A or f case insensitive
+
 CSS font loading from google @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
 .map() - takes array and makes it an array of stuff with different values;
 when javascript console.logs an array, it puts '' around strings.
 subdomain is the whole thing cs260.cs.byu.edu
 for arrow functions {++y} is undefined but ++y returns an incremented y value. If it's one line you do not need a return value.
 Javascript objects do not need quotes around the strings in the keys.
-chmod +x deploy.sh
+chmod +x deploy.sh - 
+chmod takes options and a mode modifier and then a file to be granted access
+chmod [options] mode filename;
+common option values;
+
+-R: Recursively change the permissions of all files and directories within the specified directory.
+-v: Print a message for each file or directory that is modified.
+-c: Print a message only for files or directories whose permissions are actually changed.
+
+Some common values for the mode argument include:
+
+u: Sets the permissions for the file owner.
+g: Sets the permissions for the group owner.
+o: Sets the permissions for everyone else.
+r: Gives read permission.
+w: Gives write permission.
+x: Gives execute permission.
+
+
 sudo deploy.sh //doesn't make any sense
 ls -la deploy.sh
 ssh deploy.sh //doesn't make any sense
