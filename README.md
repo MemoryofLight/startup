@@ -705,7 +705,7 @@ JSON doc contains one of the following data types: string, bool, array, number, 
 Objects contain zero or more key value pairs. The key is always a string, and the value must be one of the valid JSON data types. Key value pairs are delimited with commas. Curly braces delimit an object, square braces and commas delimit arrays, and strings are always delimited with double quotes.
 Converting to JavaScript
 You can convert JSON to, and from, JavaScript using the JSON.parse and JSON.stringify functions.
-
+response.json() converts a response into javascript //must use with http responses
 const obj = { a: 2, b: 'crockford', c: undefined };
 const json = JSON.stringify(obj);
 const objFromJson = JSON.parse(json);
@@ -1387,4 +1387,62 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
   ## RPC, REST, and GraphQL
   Who knows.
   ## Node.js
+  Lets you deploy javascript outside of the browser
   Ctr + C to exit the thing
+  ➜  node -e "console.log(1+1)" //run js directly from console
+  ➜  node main.js  //run the program from your console
+  STEPS TO START YOUR DIRECTORY
+  Create your project directory
+  Initialize it for use with NPM by running npm init -y
+  Make sure .gitignore file contains node-modules
+  Install any desired packages with npm install <package name here>
+  Add require('<package name here>') to your JavaScript code
+  Run your code with node main.js
+  ## Express
+  For example, if the client makes a GET request to http://localhost:8080/api/users?id=123, then req.originalUrl would be set to /api/users?id=123.
+
+req.originalUrl includes the entire URL path, including any query parameters, but does not include the hostname or protocol.
+## Express
+a node package
+Express provides support for:
+
+Routing requests for service endpoints
+Manipulating HTTP requests with JSON body content
+Generating HTTP responses
+Using middleware to add functionality
+## PM2 - Process Manager 2
+to keep programs running after a shutdown or closing the console, you need to register them as a daemon.
+use pm2 commands after ssh into your server
+Command	Purpose
+pm2 ls	List all of the hosted node processes
+pm2 monit	Visual monitor
+pm2 start index.js -n simon	Add a new process with an explicit name
+pm2 start index.js -n startup -- 4000	Add a new process with an explicit name and port parameter
+pm2 stop simon	Stop a process
+pm2 restart simon	Restart a process
+pm2 delete simon	Delete a process from being hosted
+pm2 delete all	Delete all processes
+pm2 save	Save the current processes across reboot
+pm2 restart all	Reload all of the processes
+pm2 restart simon-react --update-env	Reload process and update the node version to the current environment definition
+pm2 update	Reload pm2
+pm2 start env.js --watch --ignore-watch="node_modules"	Automatically reload service when index.js changes
+pm2 describe simon	Describe detailed process information
+pm2 startup	Displays the command to run to keep PM2 running after a reboot.
+pm2 logs simon	Display process logs
+## Jest
+➜ npm run test //to run the tests in your program
+Supertest and endpoints
+To test our endpoints we need another package so that we can make HTTP requests without having to actually send them over the network. This is done with the NPM package called supertest
+## Packages to Install
+➜  mkdir npmtest
+➜  cd npmtest
+➜  npm init -y   //configures directory to work with node.js
+➜  npm install give-me-a-joke  //install a package
+➜ npm install http //installs http package which contains the functionality for listening on server ports and manipulating HTTP requests.
+➜ npm install express //install express package
+➜ npm install cookie-parser //cookie parser simplifies the generation and access of cookies.
+➜ npm install -g nodemon //I already did this and you only need to do it once. nodemod is a wrapper around node that watches for files in the project directory to change. When it detects that you saved something it will automatically restart node.
+➜ node index.js 5000 //starts the javascript and listens on port 5000
+➜ npm install jest -D //installs jest as a developer file so it doesn't get released with production. Jest uses test driven development to make sure your program is returning the proper results. 
+➜ npm install supertest -D //supertest lets you do stuff
