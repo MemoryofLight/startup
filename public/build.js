@@ -5,58 +5,71 @@ const rightButton = document.querySelector('#ptright');
 const currentImgEl = document.querySelector('#currentImg');
 
 let plantIndex = 0;
+let plants;
 
 function fetchPlants(){
-    const plants = [
-        {url: './plants/roseflower.png', name: 'rose'},
-        {url: './plants/tulipflower.png', name: 'tulip'},
-        {url: './plants/sunflowerflower.png', name: 'sunflower'}
-    ];
-    return plants;
-    // fetch()
-    // .then(response => response.text())
-    // .then(data => {
-    //     const parser = new DOMParser();
-    //     const html = parser.parseFromString(data, 'text/html');
-    //     const fileLinks = html.querySelectorAll('a[href$="flower.jpg"]');
-    //     fileLinks.forEach(link => {
-    //     const url = link.getAttribute(href);
-    //     const name = url.split('/').pop().split('.')[0];
-    //     plants.push({url: url, name: name});
-    //     });
-    // });
+    fetch('/api/plants')
+    .then( (httpres) => httpres.json() )
+    .then( (res) => {
+        plants = res;
+        displayCurrentPlant();
+    })   
 }
 
 function displayCurrentPlant(){
-    currentImgEl.src = fetchPlants()[plantIndex].url;
+    currentImgEl.src = plants[plantIndex].url;
 }
 
-function leftImage(){
+async function leftImage(){
     if(plantIndex === 0){
-        plantIndex = fetchPlants().length - 1;
+        plantIndex = plants.length - 1;
     }
     else {
         plantIndex--;
     }
-    displayCurrentPlant();
+    await displayCurrentPlant();
 }
 
-function rightImage(){
-    if(plantIndex === (fetchPlants().length - 1)){
+async function rightImage(){
+    if(plantIndex === (plants.length - 1)){
         plantIndex = 0;
     }
     else{
         plantIndex++;
     }
-    displayCurrentPlant();
+    await displayCurrentPlant();
 }
 
-function savePlant(){
-    localStorage.setItem('plant_' + fetchPlants()[plantIndex].name, JSON.stringify(fetchPlants()[plantIndex]));
+function getPlayerName(){
+    return localStorage.getItem('username');
+}
+
+function savePlantLocal(){
+    localStorage.setItem('plant_' + plants[plantIndex].name, JSON.stringify(plants[plantIndex]));
     window.location.href = "garden.html";
 }
 
-displayCurrentPlant();
+async function savePlant(){
+    const userName = getPlayerName();
+    try {
+        const response = await fetch('/api/gardens', {
+        method: 'PUT',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+            plantobj: plants[plantIndex],
+            userName: userName
+            })
+        });
+        console.log('I am going to end this man')
+        localStorage.setItem('plant_' + plants[plantIndex].name, JSON.stringify(plants[plantIndex]));
+        console.log('Please shut up');
+        //window.location.href = "garden.html";
+    } catch {
+        savePlantLocal();
+    }
+}
+
+fetchPlants();
 leftButton.addEventListener('click', leftImage);
 rightButton.addEventListener('click', rightImage);
 plantButton.addEventListener('click', savePlant);
