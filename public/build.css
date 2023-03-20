@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
+
+
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.content{
+    flex: 9;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.the-button{
+    display: flex;
+    flex: 2;
+    justify-content: left;
+    align-items: center;
+}
+
+.plant-selection{
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+    align-items: center;
+    margin: 10px;
+}
+
+.actual-plant-selection{
+    flex: 1;
+    display: flex;
+    border-radius: 15%;
+    border: thick solid rgb(29, 93, 29);
+    justify-content: center;
+    align-items: center;
+}
+
+.left-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.left{
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 30px solid green;
+}
+
+.right-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.right{
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 30px solid green;
+}
+
+.build-mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 30vw;
+}
+
+.plant-parts{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#plant-parts-header{
+    color: white;
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: rgb(80, 43, 43);
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+}
+
+label{
+    margin: 10px;
+}
+
+input{
+    border-radius: 10px;
+    padding: 10px;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+
+#plantbutton{
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background-color: rgb(106, 56, 56);
+    border: thin solid rgb(46, 81, 69);
+    color: white;
+    font-size: xx-large;
+}
+
+#currentImg{
+    width: 200px;
+    height: 300px;
+}
+
+.pot{
+    width: 200px;
+    height: 100px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Plantarium</title>
+        <!--put a link to an image here-->
+
+        <link rel="stylesheet" href="build.css"/>
+        <link rel="stylesheet" href="headerfooter.css"/>
+
+        <!-- Include bootstrap CSS framework -->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+          crossorigin="anonymous"
+        />
+    </head>
+    
+    <body>
+        <header class="container-fluid">
+            <nav class="navbar fixed-top navbar-dark">
+                <a class="navbar-brand" href="#">Plantarium</a>
+                <menu class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="garden.html">My Garden</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="build.html">Make Plant</a>
+                    </li>
+                </menu>
+            </nav>
+        </header>
+        <main>
+            <h2 id="plant-parts-header">Choose Your Plant</h2>
+            <section class="content">
+                <section class="plant-selection">
+                    <div class="actual-plant-selection">
+                        <div class="left-buttons">
+                            <button id="ptleft" class="left"></button>
+                        </div>
+                        <section class="build-mid">
+                            <section class="plant-parts">
+                                <div><img id="currentImg"/></div>
+                            </section>
+                        </section>
+                        <div class="right-buttons">
+                            <button id="ptright" class="right"></button>
+                        </div>   
+                    </div>            
+                </section>
+                <section class="the-button">
+                    <button id="plantbutton">Plant</button>
+                </section>
+            </section>
+        </main>
+
+        <footer class="temporary container-fluid">
+            <a href="https://github.com/MemoryofLight/startup">Source</a> Alex Walbom
+        </footer>
+        <script src="build.js"></script>
+    </body>
+</html>

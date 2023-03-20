@@ -1,0 +1,33 @@
+
+main{
+    flex: 1;
+    flex-direction: row;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.plants{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 240px;
+    grid-gap:1em;
+    flex: 1;
+    margin: 10px;
+}
+
+.plant{
+    width: 150px;
+    height: 200px;
+}
+
+.addplant{
+    width: 100px;
+    height: 100px;
+}
+
+.remove{
+    border-radius: 10%;
+    background-color: orange;
+    margin: 10px;
+}
