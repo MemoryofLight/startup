@@ -1,15 +1,24 @@
+const myGarden = [];
 
+function getPlayerName(){
+    return localStorage.getItem('username');
+}
 
-function getPlantsFromLocalStorage() {
-    const plants = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key.startsWith("plant_")) {
-        const data = JSON.parse(localStorage.getItem(key));
-        plants.push(data);
-      }
-    }
-    return plants.length > 0 ? plants : null;
+function fetchGarden(){
+    fetch('/api/gardendisplay')
+    .then( (httpres) => httpres.json() )
+    .then( (res) => {
+        myGarden = res; 
+    })   
+    // const plants = [];
+    // for (let i = 0; i < localStorage.length; i++) {
+    //   const key = localStorage.key(i);
+    //   if (key.startsWith("plant_")) {
+    //     const data = JSON.parse(localStorage.getItem(key));
+    //     plants.push(data);
+    //   }
+    // }
+    // return plants.length > 0 ? plants : null;
 }
 
 const plantGrid = document.querySelector('.plants');
@@ -49,7 +58,12 @@ function implementAdd(){
 
 function loadGrid(){
     clearGrid();
-    const gridData = getPlantsFromLocalStorage();
+    fetchGarden();
+    if(myGarden.length <= 0){
+        gridData = null;
+    } else {
+        gridData = myGarden;
+    }
     if(gridData === null){
     const addPlant = document.createElement('img');
     addPlant.classList.add('addplant');
