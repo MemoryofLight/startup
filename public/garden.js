@@ -5,10 +5,11 @@ function getPlayerName(){
 }
 
 function fetchGarden(){
-    fetch('/api/gardendisplay')
+    fetch(`/api/garden/${getPlayerName()}`)
     .then( (httpres) => httpres.json() )
     .then( (res) => {
-        myGarden = res; 
+       // myGarden = res; 
+       console.log(res);
     })   
     // const plants = [];
     // for (let i = 0; i < localStorage.length; i++) {

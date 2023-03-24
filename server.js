@@ -20,9 +20,9 @@ apiRouter.get('/plants', (_req, res) => {
   res.send(plants);
 });
 
-apiRouter.get('/gardendisplay', async (req, res) => {
-  const garden = await DB.getGarden();
-  res.send(garden);
+apiRouter.get('/garden/:username', async (req, res) => {
+  const user = await DB.getUser(req.params.username);
+  res.send(user.garden);
 })
 
 // Posts the user's garden to storage.
