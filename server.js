@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production the application is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -19,13 +20,14 @@ apiRouter.get('/plants', (_req, res) => {
   res.send(plants);
 });
 
-apiRouter.get('/gardendisplay', (req, res) => {
-  res.send(gardens[req.body.userName])
+apiRouter.get('/gardendisplay', async (req, res) => {
+  const garden = await DB.getGarden();
+  res.send(garden);
 })
 
 // Posts the user's garden to storage.
 apiRouter.put('/gardens', (req, res) => {
-  const state = updateGarden(req.body.userName, req.body.plantobj);
+  const state = DB.updateGarden(req.body); //I need req body to be the plant object
   if(state === true){ //idk if this is necessary
   res.status(200).send('Plant added to garden.'); // Send a response indicating success
   }
