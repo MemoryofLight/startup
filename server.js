@@ -44,9 +44,9 @@ app.listen(port, () => {
 
 
 let plants = [
-  {url: './plants/roseflower.png', name: 'rose'},
-  {url: './plants/tulipflower.png', name: 'tulip'},
-  {url: './plants/sunflowerflower.png', name: 'sunflower'}
+  {url: './plants/rose.png', name: 'rose'},
+  {url: './plants/tulip.png', name: 'tulip'},
+  {url: './plants/sunflower.png', name: 'sunflower'}
 ];
 
 const gardens = {};

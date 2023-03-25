@@ -1451,3 +1451,4 @@ To test our endpoints we need another package so that we can make HTTP requests 
 ➜ npm install jest -D //installs jest as a developer file so it doesn't get released with production. Jest uses test driven development to make sure your program is returning the proper results. 
 ➜ npm install supertest -D //supertest lets you do stuff
 ## Data Services
+## Authentication

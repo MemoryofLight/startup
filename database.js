@@ -26,4 +26,4 @@ function getUser(username) {
   return user;
 }
 
-module.exports = {getUser, updateUser};
+module.exports = {getUser, updateGarden};
