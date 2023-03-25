@@ -1,16 +1,18 @@
-const myGarden = [];
+//let myGarden = [];
 
 function getPlayerName(){
     return localStorage.getItem('username');
 }
 
-function fetchGarden(){
-    fetch(`/api/garden/${getPlayerName()}`)
+async function fetchGarden() {
+    const res = await fetch(`/api/garden/:${getPlayerName()}`)
     .then( (httpres) => httpres.json() )
-    .then( (res) => {
-       // myGarden = res; 
-       console.log(res);
-    })   
+    .then( (res) => { 
+        console.log(res);
+        return res;
+    }) 
+    return res;
+} 
     // const plants = [];
     // for (let i = 0; i < localStorage.length; i++) {
     //   const key = localStorage.key(i);
@@ -20,7 +22,7 @@ function fetchGarden(){
     //   }
     // }
     // return plants.length > 0 ? plants : null;
-}
+
 
 const plantGrid = document.querySelector('.plants');
 
@@ -57,9 +59,9 @@ function implementAdd(){
     addPlantButton.addEventListener('click', addPlants);
 }
 
-function loadGrid(){
+async function loadGrid(){
     clearGrid();
-    fetchGarden();
+    myGarden = await fetchGarden();
     if(myGarden.length <= 0){
         gridData = null;
     } else {

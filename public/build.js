@@ -41,6 +41,7 @@ async function rightImage(){
 }
 
 function getPlayerName(){
+    console.log(localStorage.getItem('username'));
     return localStorage.getItem('username');
 }
 
@@ -50,14 +51,14 @@ function savePlantLocal(){
 }
 
 async function savePlant(){
-    const userName = getPlayerName();
+    const username = getPlayerName();
     try {
         const response = await fetch('/api/gardens', {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
-            plantobj: plants[plantIndex],
-            userName: userName
+            plantname: plants[plantIndex].name,
+            username: username
             })
         });
         console.log('I am going to end this man')
