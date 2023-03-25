@@ -13,11 +13,18 @@ const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 const client = new MongoClient(url);  //what does this do?
 const UserCollection = client.db('plantarium').collection('user');
 
-async function updateGarden(username, plantname) {
+async function updateGarden(username, plantname, del, id) { //This could maybe be two different endpoints but oh well
   const user = await getUser(username);
-  user.garden.push(plantname)
-  const query = {user: username}
-  UserCollection.updateOne(query, {$set: {"garden": user.garden}});
+  if (del === false){
+    user.garden.push(plantname)
+    const query = {user: username}
+    UserCollection.updateOne(query, {$set: {"garden": user.garden}});
+  }
+  else {
+    user.garden.splice(id, 1);
+    const query = {user: username}
+    UserCollection.updateOne(query, {$set: {"garden": user.garden}})
+  }
 }
 
 async function getUser(username) {
@@ -27,7 +34,6 @@ async function getUser(username) {
     const newUser = {user: username, garden: []};
     UserCollection.insertOne(newUser);
     return newUser;
-   // return {user: username, garden: []};
   } else{
     return user;
   }

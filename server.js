@@ -28,7 +28,7 @@ apiRouter.get('/garden/:username', async (req, res) => {
 // Posts the user's garden to storage.
 apiRouter.put('/gardens', async (req, res) => {
   console.log('made it to gardens api');
-  const state = await DB.updateGarden(req.body.username, req.body.plantname);
+  const state = await DB.updateGarden(req.body.username, req.body.plantname, req.body.del, req.body.id);
   res.send(200); //is this right?
 });
 
@@ -47,18 +47,3 @@ let plants = [
   {url: './plants/tulip.png', name: 'tulip'},
   {url: './plants/sunflower.png', name: 'sunflower'}
 ];
-
-const gardens = {};
-
-function updateGarden(userName, plantobj){
-    if (gardens.has(userName)) {
-      // If the user already has a garden, update the array of plants
-      const garden = gardens.get(userName);
-      garden.push(plantobj);
-      gardens.set(userName, garden);
-    } else {
-      // If the user does not have a garden, create a new array with the updated plant
-      gardens.set(userName, plantobj);
-    }
-    return true;
-  };

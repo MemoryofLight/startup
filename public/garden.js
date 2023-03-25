@@ -36,21 +36,33 @@ function addPlants(){
     window.location.href = "build.html";
 }
 
-function compostPlants(name){
+async function compostPlants(name, id){
+    const username = await getPlayerName();
+    const response = await fetch('/api/gardens', {
+        method: 'PUT',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+            plantname: name,
+            username: username,
+            del: true,
+            id: id
+            })
+        });
     localStorage.removeItem('plant_' + name);
     loadGrid();
 }
 
-function getElementId(e){
+function getElNameId(e){
+    const elementName = e.target.name;
     const elementId = e.target.id;
-    compostPlants(elementId);
+    compostPlants(elementName, elementId);
 }
 
 function implementDelete(){
     const garbageButtons = document.querySelectorAll('.remove');
     let buttons = Array.from(garbageButtons);
     for(const el of buttons){
-        el.addEventListener('click', getElementId);
+        el.addEventListener('click', getElNameId);
     }
 }
 
@@ -77,27 +89,29 @@ async function loadGrid(){
     plantGrid.appendChild(addPlant);
     }
     else{
+        //turns gridData into a plant object array instead of a plant name array; Hate the waste though.
     for(let i = 0; i < plants.length; i++){
         for(let j = 0; j < gridData.length; j++){
             if(gridData[j] === plants[i].name){
-                gridData[j] = plants[i].url;
+                gridData[j] = plants[i];
             }
         }
     }
-    gridData.forEach(element => {
+    for(let i = 0; i < gridData.length; i++){
         const gridPair = document.createElement('div');
         const plant = document.createElement('img');
         plant.classList.add('plant');
-        plant.setAttribute('src', element); //fix this so it references my plants array;
+        plant.setAttribute('src', gridData[i].url);
         const deleteBtn = document.createElement('button');
         deleteBtn.classList.add('remove');
-       // deleteBtn.setAttribute('id', element.name);
+        deleteBtn.setAttribute('name', gridData[i].name);
+        deleteBtn.setAttribute('id', i);
         deleteBtn.textContent = 'Delete Plant';
 
         gridPair.appendChild(plant);
         gridPair.appendChild(deleteBtn);
         plantGrid.appendChild(gridPair);
-    });
+    }
     const addPlant = document.createElement('img');
     addPlant.classList.add('addplant');
     addPlant.setAttribute('src', 'addplant.png');

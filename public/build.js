@@ -58,13 +58,12 @@ async function savePlant(){
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
             plantname: plants[plantIndex].name,
-            username: username
+            username: username,
+            del: false,
+            id: null
             })
         });
-        console.log('I am going to end this man')
-        localStorage.setItem('plant_' + plants[plantIndex].name, JSON.stringify(plants[plantIndex]));
-        console.log('Please shut up');
-        //window.location.href = "garden.html";
+        window.location.href = "garden.html";
     } catch {
         savePlantLocal();
     }
