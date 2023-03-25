@@ -77,14 +77,21 @@ async function loadGrid(){
     plantGrid.appendChild(addPlant);
     }
     else{
+    for(let i = 0; i < plants.length; i++){
+        for(let j = 0; j < gridData.length; j++){
+            if(gridData[j] === plants[i].name){
+                gridData[j] = plants[i].url;
+            }
+        }
+    }
     gridData.forEach(element => {
         const gridPair = document.createElement('div');
         const plant = document.createElement('img');
         plant.classList.add('plant');
-        plant.setAttribute('src', element.url); //fix this so it references my plants array;
+        plant.setAttribute('src', element); //fix this so it references my plants array;
         const deleteBtn = document.createElement('button');
         deleteBtn.classList.add('remove');
-        deleteBtn.setAttribute('id', element.name);
+       // deleteBtn.setAttribute('id', element.name);
         deleteBtn.textContent = 'Delete Plant';
 
         gridPair.appendChild(plant);
