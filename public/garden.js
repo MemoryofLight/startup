@@ -5,7 +5,7 @@ function getPlayerName(){
 }
 
 async function fetchGarden() {
-    const res = await fetch(`/api/garden/:${getPlayerName()}`)
+    const res = await fetch(`/api/garden/${getPlayerName()}`)
     .then( (httpres) => httpres.json() )
     .then( (res) => { 
         console.log(res);
@@ -62,6 +62,9 @@ function implementAdd(){
 async function loadGrid(){
     clearGrid();
     myGarden = await fetchGarden();
+    const res = await fetch('/api/plants');
+    const plants = await res.json();
+    console.log(plants);
     if(myGarden.length <= 0){
         gridData = null;
     } else {
@@ -78,7 +81,7 @@ async function loadGrid(){
         const gridPair = document.createElement('div');
         const plant = document.createElement('img');
         plant.classList.add('plant');
-        plant.setAttribute('src', element.url);
+        plant.setAttribute('src', element.url); //fix this so it references my plants array;
         const deleteBtn = document.createElement('button');
         deleteBtn.classList.add('remove');
         deleteBtn.setAttribute('id', element.name);

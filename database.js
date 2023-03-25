@@ -24,7 +24,10 @@ async function getUser(username) {
   const query = {user: username};
   const user = await UserCollection.findOne(query);
   if (user === null){
-    return {user: username, garden: []};
+    const newUser = {user: username, garden: []};
+    UserCollection.insertOne(newUser);
+    return newUser;
+   // return {user: username, garden: []};
   } else{
     return user;
   }

@@ -26,11 +26,10 @@ apiRouter.get('/garden/:username', async (req, res) => {
 })
 
 // Posts the user's garden to storage.
-apiRouter.put('/gardens', (req, res) => {
-  const state = DB.updateGarden(req.body.username, req.body.plantname);
-  if(state === true){ //idk if this is necessary
-  res.status(200).send('Plant added to garden.'); // Send a response indicating success
-  }
+apiRouter.put('/gardens', async (req, res) => {
+  console.log('made it to gardens api');
+  const state = await DB.updateGarden(req.body.username, req.body.plantname);
+  res.send(200); //is this right?
 });
 
 // Return the application's default page if the path is unknown
