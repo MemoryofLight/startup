@@ -1,4 +1,6 @@
 const {MongoClient} = require('mongodb');
+const bcrypt = require('bcrypt');
+const uuid = require('uuid');
 
 const userName = process.env.MONGOUSER;
 const password = process.env.MONGOPASSWORD;
@@ -12,6 +14,28 @@ const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);  //what does this do?
 const UserCollection = client.db('plantarium').collection('user');
+const AuthCollection = client.db('plantarium').collection('authpeeps');
+
+function getAuth(email){
+  return AuthCollection.findOne({email: email});
+}
+
+function getAuthByToken(token){
+  return AuthCollection.findOne({token: token});
+}
+
+async function createAuth(email, password){
+  const passwordHash = await bcrypt.hash(password, 10);
+
+  const auth = {
+    email: email,
+    password: passwordHash,
+    token: uuid.v4()
+  };
+  await AuthCollection.insertOne(auth);
+
+  return auth;
+}
 
 async function updateGarden(username, plantname, del, id) { //This could maybe be two different endpoints but oh well
   const user = await getUser(username);
@@ -39,4 +63,10 @@ async function getUser(username) {
   }
 }
 
-module.exports = {getUser, updateGarden};
+module.exports = {
+  getUser, 
+  updateGarden,
+  getAuth,
+  getAuthByToken,
+  createAuth
+};
