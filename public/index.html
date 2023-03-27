@@ -34,10 +34,18 @@
     </header>
 
     <main>
-        <section class="sign-in">
+        <section class="loginControls" style="display: none">
                 <div class="username">
-                    <label for="user">Username</label>
-                    <input id="user" name="username" placeholder="username" type="text" />
+                    <label for="user">Email</label>
+                    <div class="input-group" id="user" name="username">
+                        <span class="input-group-text">@</span>
+                        <input
+                          class="form-control"
+                          type="text"
+                          id="userName"
+                          placeholder="your@email.com"
+                        />
+                      </div>
                 </div>
                 <div class="password">
                     <label for="pass">Password</label>
