@@ -35,17 +35,14 @@
 
     <main>
         <section class="loginControls" style="display: none">
-                <div class="username">
+                <div class="username" id="user" name="username">
                     <label for="user">Email</label>
-                    <div class="input-group" id="user" name="username">
-                        <span class="input-group-text">@</span>
                         <input
                           class="form-control"
                           type="text"
                           id="userName"
                           placeholder="your@email.com"
                         />
-                      </div>
                 </div>
                 <div class="password">
                     <label for="pass">Password</label>
@@ -55,6 +52,35 @@
                     <input id="sign-in-button" type="submit" value="Sign In" onclick="login()"/>
                 </div>
         </section>
+
+        <!-- enter controls displayed when authenticated-->
+        <div id="enterControls" style="display: none">
+            <div id="playerName"></div>
+            <button type="button" class="btn btn-primary" onclick="play()">
+            Enter Garden
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="logout()">
+            logout
+            </button>
+        </div>
+
+        <!--error stuff-->
+        <div class="modal fade" id="msgModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content text-dark">
+                <div class="modal-body">error message here</div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
 
     <footer class="temporary container-fluid">

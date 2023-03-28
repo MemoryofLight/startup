@@ -1455,3 +1455,10 @@ To test our endpoints we need another package so that we can make HTTP requests 
 ## Data Services
 ## Authentication
 Authorization services often use standard protocols for authenticating and authorizing. These include standards such as OAuth, SAML, and OIDC. Additionally, they usually support concepts like Single Sign On (SSO) and Federated Login. Single sign on allows a user to use the same credentials for multiple web applications. For example, you can login into GitHub using your Google credentials. Federated login allows a user to login once and then the authentication token reused to automatically log the user into multiple websites. For example, logging into Gmail allows you to also use Google Docs and YouTube without logging in again.
+## Class Websockets
+webSockets piggy backs off of http.
+http only allows the client to request the server and the server can only respond. Websockets turns both client and server to a peer and the peers can actively pass info to each other.
+Upgrade: websocket
+Connection: Upgrade
+At any point, either of the peers can close the connection.
+The live server connection on vscode is actually an example of websockets when you update the code and it updates in the browser.

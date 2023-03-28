@@ -31,7 +31,7 @@ apiRouter.post('/auth/create', async (req, res) => {
     setAuthCookie(res, auth.token);
 
     res.send({
-      id: user._id
+      id: auth._id
     });
   };
 });
@@ -41,8 +41,8 @@ apiRouter.post('/auth/login', async (req, res) => {
   const auth = await DB.getAuth(req.body.email);
   if(auth) {
     if(await bcrypt.compare(req.body.password, user.password)){
-      setAuthCookie(res, user.token);
-      res.send({id: user_id});
+      setAuthCookie(res, auth.token);
+      res.send({id: auth._id});
       return;
     }
   }
