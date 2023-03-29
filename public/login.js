@@ -54,7 +54,7 @@ function enter(){
     window.location.href = 'garden.html';
 }
 
-function logOut(){
+function logOutUser(){
     fetch(`/api/auth/logout`, {
         method: 'delete',
     }).then(() => (window.location.href = '/'));

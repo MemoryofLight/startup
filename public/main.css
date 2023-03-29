@@ -9,7 +9,7 @@
     background-position: -30px -13px;
   }
   
-.loginControls{
+#loginControls{
     background-color: #60af32;
     border-radius: 20px;
     border: thick solid #396320;
@@ -42,10 +42,6 @@
     flex: 1;
     margin: 10px;
     line-height: 100%; /*why is the Sign in not centered?*/
-}
-
-#sign-in-button{
-    color: #396320;
 }
 
 label{
