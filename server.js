@@ -76,7 +76,7 @@ var secureApiRouter = express.Router(); //why var here?
 apiRouter.use(secureApiRouter); //any request that goes through api will first go through secure
 
 //use means that every request will go here regardless of what it is
-secureApiRouter.use(async (req, res, next) => {
+secureApiRouter.use(async (req, res, next) => {  //authtoken will be undefined for some reason when I create a new auth in the same session as another.
   authToken = req.cookies[authCookieName];
   const auth = await DB.getAuthByToken(authToken);
   if(auth){
