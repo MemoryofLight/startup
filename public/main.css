@@ -56,12 +56,6 @@ input::placeholder{
     text-align: center;
 }
 
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #temporary{
     color: red;
     margin-top: -5em;
@@ -90,5 +84,3 @@ footer{
     flex: 1;
     margin: 10px;
 }
-  
-

@@ -14,18 +14,25 @@ header {
     background-color: green;
   }
   
-  footer {
-    flex: 0 30px;
-    background-color: red;
-  }
-  
-  menu {
-    flex: 1;
-    display: flex;
-    flex-direction: row !important;
-    list-style: none;
-  }
+footer {
+  flex: 0 30px;
+  background-color: rgba(97, 89, 58, 0.74);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .nav-item{
-    margin-right: 10px;
-  }
+menu {
+  flex: 1;
+  display: flex;
+  flex-direction: row !important;
+  list-style: none;
+}
+
+.nav-item{
+  margin-right: 10px;
+}
+
+#author{
+  margin-left: 10px;
+}
