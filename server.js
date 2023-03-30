@@ -40,7 +40,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 apiRouter.post('/auth/login', async (req, res) => {
   const auth = await DB.getAuth(req.body.email);
   if(auth) {
-    if(await bcrypt.compare(req.body.password, user.password)){
+    if(await bcrypt.compare(req.body.password, auth.password)){
       setAuthCookie(res, auth.token);
       res.send({id: auth._id});
       return;

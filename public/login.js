@@ -29,7 +29,7 @@ async function createUser() {
 
 async function loginOrCreate(endpoint){
     const username = document.querySelector('#username')?.value;
-    const password = document.querySelector('#userPassword')?.value;
+    const password = document.querySelector('#pass')?.value;
     const response = await fetch(endpoint, {
         method: 'POST',
         body: JSON.stringify({email: username, password: password}),
