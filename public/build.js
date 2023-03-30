@@ -53,7 +53,7 @@ function savePlantLocal(){
 async function savePlant(){
     const username = getPlayerName();
     try {
-        const response = await fetch('/api/gardens', {
+        await fetch('/api/gardens', {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({

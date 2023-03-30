@@ -23,15 +23,14 @@
 
 .username{
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 10px;
 }
 
 .password{
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -41,7 +40,7 @@
 #sign-in{
     flex: 1;
     margin: 10px;
-    line-height: 100%; /*why is the Sign in not centered?*/
+    line-height: 100%;
 }
 
 label{
@@ -69,4 +68,27 @@ footer{
     font-size: large;
 }
 
+#playerName {
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+#enterControls{
+    background-color: #60af32;
+    border-radius: 20px;
+    border: thick solid #396320;
+    min-width: 25vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(-30px);
+}
+
+.enterbutton{
+    flex: 1;
+    margin: 10px;
+}
+  
 
