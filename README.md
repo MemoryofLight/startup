@@ -1464,3 +1464,25 @@ Upgrade: websocket
 Connection: Upgrade
 At any point, either of the peers can close the connection.
 The live server connection on vscode is actually an example of websockets when you update the code and it updates in the browser.
+
+## Web Frameworks
+Vue combines HTML, CSS, and JavaScript into a single file. HTML is represented by a template element that can be aggregated into other templates.
+Svelte combines HTML, CSS, and JavaScript into a single file. The difference here is that Svelte requires a transpiler to generate browser ready code, instead of a runtime virtual DOM like Vue.
+React combines JavaScript and HTML into its component format. CSS must be declared outside of the JSX file. The component itself highly leverages the functionality of JavaScript and can be represented as a function or class.
+An Angular component defines what JavaScript, HTML, and CSS are combined together. This keeps a fairly strong separation of files what are usually grouped together in a directory rather than using the single file representation.
+## Frameworks Class
+useEffect- used for lifecycle events that don't directly impact the DOM
+useSate- used to change DOM ig
+const [state variable, update state function] = React.useState(initial state);
+To make React aware that the variable was updated you need to use the function you associated with it or it will not automatically update the DOM.
+The funcitona associated with the state will only just take a new value and update the DOM. That's all.
+function UseEffectHookDemo(){
+  React.useEffect(() => {
+    console.log('rendered');
+  });
+}
+[] as a second parfameter of Reac.useEffect says only call the first parameter the first time
+That example generally is not what the useEffect is used for.
+You may only use these in function components
+You may only put them at the top of the function scope
+You may not have loops and conditionals with them
