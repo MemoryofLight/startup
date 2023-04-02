@@ -8,6 +8,7 @@ main{
 }
 
 #player-messages{
+    background-color: blue;
     flex: 1;
 }
 

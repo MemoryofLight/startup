@@ -1,5 +1,7 @@
 //let myGarden = [];
 
+const PlantEvent = 'Planted';
+
 function getPlayerName(){
     return localStorage.getItem('username');
 }
@@ -121,4 +123,22 @@ async function loadGrid(){
     implementAdd();
 }
 
+function displayMsg(cls, from, msg) { //do I need to pass socket here?
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+}
+
+function configureWebSocket(){
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === PlantEvent) {
+        displayMsg('Gardener', msg.from, `planted a ${msg.plant}`);
+      };
+    }
+}
+
+configureWebSocket();
 loadGrid();

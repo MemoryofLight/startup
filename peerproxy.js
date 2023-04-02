@@ -3,7 +3,7 @@ const uuid = require('uuid');
 
 class PeerProxy {
   constructor(httpServer) {
-    // Create a websocket object
+    // Create a websocket server that doesn't listen on a port
     const wss = new WebSocketServer({ noServer: true });
 
     // Handle the protocol upgrade from HTTP to WebSocket
@@ -38,7 +38,7 @@ class PeerProxy {
           }
         });
       });
-
+      
       // Respond to pong messages by marking the connection alive
       ws.on('pong', () => {
         connection.alive = true;
