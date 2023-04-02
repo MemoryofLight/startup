@@ -7,12 +7,16 @@ main{
     width: 100%;
 }
 
+#player-messages{
+    flex: 1;
+}
+
 .plants{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: 240px;
     grid-gap:1em;
-    flex: 1;
+    flex: 6;
     margin: 10px;
 }
 
