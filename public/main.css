@@ -1,5 +1,5 @@
  
-  main {
+main {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,20 @@
     justify-content: space-around;
     background-image: url(homebackground.jpg);
     background-position: -30px -13px;
-  }
+}
+
+.quote-box {
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: thick solid #396320;
+    
+}
+  
+.quote {
+    font-style: italic;
+}
+  
   
 #loginControls{
     background-color: #60af32;

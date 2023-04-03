@@ -1493,3 +1493,8 @@ when writing in html {} are the escape from JSX
 state is a way that components remember things
 when you call a set function to update a state, React automatically updates child components too
 To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.
+## Frameworks Class 2
+npx create-react-app test-react
+cd test-react && npm start
+Toolchains: Babel->Minimy (compresses)->Dev Http server  *this is for npm start
+babel->minify-> /public/index.html *this is for npm run build
