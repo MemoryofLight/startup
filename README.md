@@ -1486,3 +1486,10 @@ That example generally is not what the useEffect is used for.
 You may only use these in function components
 You may only put them at the top of the function scope
 You may not have loops and conditionals with them
+## React
+uses className instead of class when defining CSS selectors
+when you make html components they must start with a capital letter
+when writing in html {} are the escape from JSX
+state is a way that components remember things
+when you call a set function to update a state, React automatically updates child components too
+To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.

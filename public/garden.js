@@ -124,7 +124,7 @@ async function loadGrid(){
 }
 
 function displayMsg(cls, from, msg) { //do I need to pass socket here?
-    const chatText = document.querySelector('#player-messages');
+    const chatText = document.querySelector('.player-messages');
     chatText.innerHTML =
       `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
 }

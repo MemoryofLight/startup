@@ -3,6 +3,7 @@ const app = express();
 const DB = require('./database.js');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
+const {PeerProxy} = require('./peerproxy.js');
 
 const authCookieName = 'token';
 
@@ -111,9 +112,11 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+new PeerProxy(httpService);
 
 // setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {
