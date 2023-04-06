@@ -1503,3 +1503,62 @@ npx create-react-app test-react
 cd test-react && npm start
 Toolchains: Babel->Minimy (compresses)->Dev Http server  *this is for npm start
 babel->minify-> /public/index.html *this is for npm run build
+## React CLI (command line interface)
+Now that we have covered the basics of React, we want to extend our usage to include a full web framework toolchain that allows us to use JSX, minification, polyfills, and bundling for our Simon and start up applications. One common way for configuring your project to take advantage of these technologies is to use a Command Line Interface (CLI) to initially set up a React based project.
+
+A CLI is a program that runs from the console and usually provides an assortment of commands related to some specific purpose. For example, the AWS CLI allows you to interact with all of its services. This saves you the time of having to bring up the AWS website interface when you want to use an AWS service. Instead of opening a browser, logging in, navigating to a service, and walking through a bunch of UI dialogs, you simply open your console window and use the AWS CLI to execute a single command.
+
+To set up our React toolchain we will use the create-react-app CLI. This CLI will create and configure a template React application that you can use as a starting place for your application. create-react-app is an NPM package that works as a console program. Previously you used npm packages to add code libraries to your applications, but you can also run NPM packages as if they were a console program, if they are configured to do so.
+
+The common way to run CLI NPM programs is to use the NPX program that was included when you installed NPM. NPX will temporarily download the desired package from NPM and then execute it using Node. Basically, NPX is just a short cut for NPM install and NPM start. It also has the advantage of not actually persistently installing the package and so it doesn't leave any clutter behind in your development environment.
+
+When you run create-react-app with NPX, it creates a brand new React application project based on a standard template. You can see how this works by running the following from your console window. Make sure you are in a directory where you keep your coding projects. For example, cd ~/src/byu/cs260.
+
+Success! Created test-react at C:\Users\alexw\byu\cs260\test-react
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd test-react
+  npm start
+
+Happy hacking!
+
+### Create React App
+At a high level create-react-app did the following:
+
+Updated ./package-json to include the necessary NPM packages for running and testing a React application.
+Created ./public/index.html as the entry point for the browser to load your application
+Created ./src/index.js to initialize the React application
+Created ./src/app.js to provide the top level React component
+All the other files provide styling, use on mobile devices, testing, and performance monitoring.
+### Modifying the React Application
+There is nothing that create-react-app does that you should consider off limits for change or improvement. If you take the time to understand what it is doing and why, then you should feel free to customize the application to how you would like it to work. At a basic level you should always do the following:
+
+Replace the icon files with your own icons
+Modify the manifest.json and package.json to contain your application name
+Modify the README.md to describe your application
+Modify index.html to contain a proper title and description metadata.
+### JSX vs JS
+The create-react-app CLI uses the .js (JavaScript) extension for JSX files instead of .jsx. The Babel transpiler will work with either one, but some editor tools will work differently based upon the extension. For this reason, you might consider renaming the .js files that actually contain JSX to use .jsx instead. The developers at AirBNB had an interesting conversation on this topic that you might browse if you would like to consider the differing opinions on this subject.
+### Building a production release
+Now that you have your React application the way that you like you need to build a production ready release. You do this by running npm run build. The executes the build script found in your package.json. The build script transpiles, minifies, and injects the proper JavaScript, and then outputs everything to a deployment ready version contained in a subdirectory named build.
+
+➜  npm run build
+
+Creating an optimized production build...
+Compiled successfully.
+The deployment scripts for Simon React creates a distribution package by calling npm run build and then copying the build directory out to your production server.
