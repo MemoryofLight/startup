@@ -1564,3 +1564,26 @@ Now that you have your React application the way that you like you need to build
 Creating an optimized production build...
 Compiled successfully.
 The deployment scripts for Simon React creates a distribution package by calling npm run build and then copying the build directory out to your production server.
+
+## Final Review
+- cookies allow a server to store data on the client
+- Language is not a standard HTTP header. Host, Content-Type, and Cookie are all standard HTTP headers.
+- fetch can be used in front-end and back-end code.
+- JSX allows you to inject html into your javascript, compnonentize your HMTL, and allow for composability of your HTML. IT does not allow you to combine CSS, HTML, and Javascript (you can, but it's not made for that). some web frameworks allow for that but not React with JSX.
+- const r = await fetch('/fav/ringo', {method: 'Delete'}) a forward slash can escape a regular expression (delimited by /expression/) so that the expression can look for a literal forward slash.
+th app.delete(/fav\/(.*)/);
+- Linux daemon can fork other processes, start when the computer is rebooted, execute independent of a user and PM2 is a daemon that can do that.
+- why is hashing important? it improves security by making the password unreadable.
+- don't look at NavLink to tell you what component will render. look at the path to tell
+- websockets allow peer to peer communication
+- to see what a component will render, go to the return statement. 
+- React.useEffect(() => updateX(D), [v]); if the brackets are empty it only calls once, here if the v changes. If there is not a second argument, it will call every time the component is rendered? Confused... Ask.
+- port 80 is reserved for http, 443 for https.
+- { $or: [{name:/J.*/}, {score: {$lt:3}}]} is a mongo query. It will return all documents where the name starts with J or the score is less than 3.
+- HTTP status codes in the 300 range are for content redirects or caching
+- HTTP status codes in the 400 range are for client errors
+- HTTP status codes in the 500 range are for server errors
+- HTTP status codes in the 200 range are for success
+- HTTP status codes in the 100 range are for informational
+- npm install w - adds a dependcy to your package.json, adds the websocket source code to your node_modules directory, and locks the version of the websocket package for your application. It does not add template code for websockets to your javascript.
+- use is a global request (all methods match)
